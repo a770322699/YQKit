@@ -47,6 +47,10 @@
 		D8D152321DDD83BD000F2DB0 /* YQIntrinsicContentSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D152111DDD83BD000F2DB0 /* YQIntrinsicContentSizeView.m */; };
 		D8D152331DDD83BD000F2DB0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D8D152141DDD83BD000F2DB0 /* README.md */; };
 		D8D152341DDD83BD000F2DB0 /* YQFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D152171DDD83BD000F2DB0 /* YQFunction.m */; };
+		D8DEE4F01DF54B67001C65F5 /* NSManagedObject+YQModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DEE4EB1DF54B67001C65F5 /* NSManagedObject+YQModelStore.m */; };
+		D8DEE4F11DF54B67001C65F5 /* NSManagedObjectContext+YQModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DEE4ED1DF54B67001C65F5 /* NSManagedObjectContext+YQModelStore.m */; };
+		D8DEE4F21DF54B67001C65F5 /* YQModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DEE4EF1DF54B67001C65F5 /* YQModelStore.m */; };
+		D8DEE4F51DF54C35001C65F5 /* YQCoderObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DEE4F41DF54C35001C65F5 /* YQCoderObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +139,14 @@
 		D8D152191DDD83BD000F2DB0 /* YQMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQMacro.h; sourceTree = "<group>"; };
 		D8D1521A1DDD83BD000F2DB0 /* YQSimpleFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQSimpleFunc.h; sourceTree = "<group>"; };
 		D8D1521B1DDD83BD000F2DB0 /* YQSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQSynthesizeSingleton.h; sourceTree = "<group>"; };
+		D8DEE4EA1DF54B67001C65F5 /* NSManagedObject+YQModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+YQModelStore.h"; sourceTree = "<group>"; };
+		D8DEE4EB1DF54B67001C65F5 /* NSManagedObject+YQModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+YQModelStore.m"; sourceTree = "<group>"; };
+		D8DEE4EC1DF54B67001C65F5 /* NSManagedObjectContext+YQModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+YQModelStore.h"; sourceTree = "<group>"; };
+		D8DEE4ED1DF54B67001C65F5 /* NSManagedObjectContext+YQModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+YQModelStore.m"; sourceTree = "<group>"; };
+		D8DEE4EE1DF54B67001C65F5 /* YQModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQModelStore.h; sourceTree = "<group>"; };
+		D8DEE4EF1DF54B67001C65F5 /* YQModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQModelStore.m; sourceTree = "<group>"; };
+		D8DEE4F31DF54C35001C65F5 /* YQCoderObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQCoderObject.h; sourceTree = "<group>"; };
+		D8DEE4F41DF54C35001C65F5 /* YQCoderObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQCoderObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +237,7 @@
 		D8D151DA1DDD83BD000F2DB0 /* YQKit */ = {
 			isa = PBXGroup;
 			children = (
+				D8DEE4E71DF54B67001C65F5 /* Model */,
 				D88D3DFA1DED7D8D0099DB2D /* Networking */,
 				D8D151DB1DDD83BD000F2DB0 /* Common */,
 			);
@@ -350,6 +363,37 @@
 				D8D1521B1DDD83BD000F2DB0 /* YQSynthesizeSingleton.h */,
 			);
 			path = GlobalValue;
+			sourceTree = "<group>";
+		};
+		D8DEE4E71DF54B67001C65F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D8DEE4E81DF54B67001C65F5 /* CoderModel */,
+				D8DEE4E91DF54B67001C65F5 /* ModelStore */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D8DEE4E81DF54B67001C65F5 /* CoderModel */ = {
+			isa = PBXGroup;
+			children = (
+				D8DEE4F31DF54C35001C65F5 /* YQCoderObject.h */,
+				D8DEE4F41DF54C35001C65F5 /* YQCoderObject.m */,
+			);
+			path = CoderModel;
+			sourceTree = "<group>";
+		};
+		D8DEE4E91DF54B67001C65F5 /* ModelStore */ = {
+			isa = PBXGroup;
+			children = (
+				D8DEE4EA1DF54B67001C65F5 /* NSManagedObject+YQModelStore.h */,
+				D8DEE4EB1DF54B67001C65F5 /* NSManagedObject+YQModelStore.m */,
+				D8DEE4EC1DF54B67001C65F5 /* NSManagedObjectContext+YQModelStore.h */,
+				D8DEE4ED1DF54B67001C65F5 /* NSManagedObjectContext+YQModelStore.m */,
+				D8DEE4EE1DF54B67001C65F5 /* YQModelStore.h */,
+				D8DEE4EF1DF54B67001C65F5 /* YQModelStore.m */,
+			);
+			path = ModelStore;
 			sourceTree = "<group>";
 		};
 		F69783E7F7EE0E607098EBA3 /* Pods */ = {
@@ -509,17 +553,21 @@
 				D806E6981DCC761C000B8F98 /* main.m in Sources */,
 				D8D152241DDD83BD000F2DB0 /* UIButton+YQCategory.m in Sources */,
 				D8D1522B1DDD83BD000F2DB0 /* UITableViewCell+YQCategory.m in Sources */,
+				D8DEE4F11DF54B67001C65F5 /* NSManagedObjectContext+YQModelStore.m in Sources */,
 				D8D152321DDD83BD000F2DB0 /* YQIntrinsicContentSizeView.m in Sources */,
 				D8D1522F1DDD83BD000F2DB0 /* UIView+YQSideline.m in Sources */,
 				D8D152231DDD83BD000F2DB0 /* README.md in Sources */,
 				D8D152341DDD83BD000F2DB0 /* YQFunction.m in Sources */,
+				D8DEE4F21DF54B67001C65F5 /* YQModelStore.m in Sources */,
 				D8CD0CBE1DF0088100641E05 /* YQUploadNetworkingManager.m in Sources */,
 				D8D1522A1DDD83BD000F2DB0 /* UISearchBar+YQCategory.m in Sources */,
 				D88D3E001DEEAB330099DB2D /* YQNetworkingResult.m in Sources */,
 				D8CD0CC11DF0089A00641E05 /* YQDataNetworkingManager.m in Sources */,
 				D8D152221DDD83BD000F2DB0 /* NSString+YQURL.m in Sources */,
+				D8DEE4F01DF54B67001C65F5 /* NSManagedObject+YQModelStore.m in Sources */,
 				D8D1522C1DDD83BD000F2DB0 /* UIView+YQCategory.m in Sources */,
 				D8D152271DDD83BD000F2DB0 /* UIImage+YQCategory.m in Sources */,
+				D8DEE4F51DF54C35001C65F5 /* YQCoderObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

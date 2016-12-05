@@ -142,7 +142,7 @@ static const char * const kRuntimeSaveKey_downTasks = "kRuntimeSaveKey_downTasks
             return [NSURL fileURLWithPath:task.cachePath];
         }else{
             NSString *fileName = [task.URLString yq_md5Encrypt];
-            return [NSURL fileURLWithPath:[kYQPathTemp stringByAppendingPathComponent:fileName]];
+            return [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:fileName]];
         }
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         
