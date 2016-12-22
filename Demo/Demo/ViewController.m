@@ -8,6 +8,7 @@
 
 #import "YQCategory.h"
 #import "YQGlobalValue.h"
+#import "Masonry.h"
 
 #import "ViewController.h"
 
@@ -17,7 +18,7 @@
 
 #import "YQNetworkingManager+Create.h"
 
-@interface ViewController ()<YQViewSidelineDataSource>
+@interface ViewController ()<YQViewSidelineDataSource, UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIButton *timeButton;
 @property (nonatomic, strong) dispatch_source_t timer;
@@ -31,17 +32,36 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.view.yq_userInteractionEnabledWhenLoaing = YES;
+//    self.view.yq_userInteractionEnabledWhenLoaing = YES;
+//    
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(30, 100, 200, 100)];
+//    view.yq_sidelineDataSource = self;
+//    view.yq_sideLineOption = YQViewSidelineOption_top | YQViewSidelineOption_left | YQViewSidelineOption_bottom | YQViewSidelineOption_right;
+//    [self.view addSubview:view];
+//    
+//    view.yq_center = self.view.center;
+//    
+//    [self.timeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(30, 100, 200, 100)];
-    view.yq_sidelineDataSource = self;
-    view.yq_sideLineOption = YQViewSidelineOption_top | YQViewSidelineOption_left | YQViewSidelineOption_bottom | YQViewSidelineOption_right;
-    [self.view addSubview:view];
+    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(0, -80 - 200, 320, 360)];
+    view.image = [UIImage imageNamed:@"bg"];
     
-    view.yq_center = self.view.center;
+    UILabel *label = [[UILabel alloc] init];
+    label.translatesAutoresizingMaskIntoConstraints = NO;
+    label.text = @"及福利大咖";
+    label.textColor = [UIColor redColor];
+    label.backgroundColor = [UIColor cyanColor];
+    [view addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(view);
+    }];
     
-    [self.timeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
-    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.yq_scaleHeaderView = view;
+    tableView.yq_scaleHeaderViewVisibleHeight = 200;
+    [self.view addSubview:tableView];
 }
 
 
@@ -153,6 +173,21 @@
     [manager startWithCompletion:^(YQNetworkingResult *result) {
         NSLog(@"%@", result.URL);
     }];
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 40;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identitiy = @"sdjfal";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identitiy];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identitiy];
+        cell.textLabel.text = @"测试";
+    }
+    return cell;
 }
 
 @end

@@ -10,57 +10,25 @@
 
 #import "UICollectionViewCell+YQProperty.h"
 
-static const char *kRuntimeSaveKey_bgView   = "kRuntimeSaveKey_bgView";
-static const char *kRunTimeSaveKey_selectedBgView   = "kRunTimeSaveKey_selectedBgView";
-
-@interface UICollectionViewCell (YQPropertyPrivate)
-
-@property (nonatomic, strong) UIView *yq_selectBgView;
-@property (nonatomic, strong) UIView *yq_bgView;
-
-@end
-
-@implementation UICollectionViewCell (YQPropertyPrivate)
-
-#pragma mark - getter
-- (UIView *)yq_selectBgView{
-    UIView *selectBgView = objc_getAssociatedObject(self, kRunTimeSaveKey_selectedBgView);
-    if (selectBgView == nil) {
-        selectBgView = [[UIView alloc] init];
-        self.yq_selectBgView = selectBgView;
-    }
-    
-    return selectBgView;
-}
-
-- (UIView *)yq_bgView{
-    UIView *bgView = objc_getAssociatedObject(self, kRuntimeSaveKey_bgView);
-    if (bgView == nil) {
-        bgView = [[UIView alloc] init];
-        self.yq_bgView = bgView;
-    }
-    
-    return bgView;
-}
-
-#pragma mark - setting
-- (void)setYq_selectBgView:(UIView *)yq_selectBgView{
-    objc_setAssociatedObject(self, kRunTimeSaveKey_selectedBgView, yq_selectBgView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (void)setYq_bgView:(UIView *)yq_bgView{
-    objc_setAssociatedObject(self, kRuntimeSaveKey_bgView, yq_bgView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-@end
-
-// YQPropertyPrivate end
-//****************************************************************************************************************************//
-
-//****************************************************************************************************************************//
-// YQProperty   start
-
 @implementation UICollectionViewCell (YQProperty)
+@dynamic yq_selectBgImage, yq_bgImage, yq_bgColor, yq_selectBgColor;
+
+#pragma mark - private
+- (UIView *)yq_createBgView{
+    return [[UIView alloc] init];
+}
+
+- (UIImageView *)yq_createBgImageView{
+    return [[UIImageView alloc] init];
+}
+
+- (UIView *)yq_createSelectBgView{
+    return [[UIView alloc] init];
+}
+
+- (UIImageView *)yq_createSelectBgImageView{
+    return [[UIImageView alloc] init];
+}
 
 #pragma mark - getter
 - (UIColor *)yq_selectBgColor{
@@ -71,22 +39,80 @@ static const char *kRunTimeSaveKey_selectedBgView   = "kRunTimeSaveKey_selectedB
     return self.backgroundView.backgroundColor;
 }
 
+- (UIImage *)yq_bgImage{
+    if ([self.backgroundView isKindOfClass:[UIImageView class]]) {
+        return [(UIImageView *)self.backgroundView image];
+    }
+    return nil;
+}
+
+- (UIImage *)yq_selectBgImage{
+    if ([self.selectedBackgroundView isKindOfClass:[UIImageView class]]) {
+        return [(UIImageView *)self.selectedBackgroundView image];
+    }
+    return nil;
+}
+
 #pragma mark - setting
 - (void)setYq_selectBgColor:(UIColor *)yq_selectBgColor{
-    if (yq_selectBgColor) {
-        self.yq_selectBgView.backgroundColor = yq_selectBgColor;
-        self.selectedBackgroundView = self.yq_selectBgView;
-    }else{
-        self.selectedBackgroundView = nil;
+    if (yq_selectBgColor) { // 有颜色
+        if (self.selectedBackgroundView == nil) {
+            self.selectedBackgroundView = [self yq_createSelectBgView];
+        }
+        self.selectedBackgroundView.backgroundColor = yq_selectBgColor;
+    }else{  // 无颜色，有图片
+        if (self.selectedBackgroundView && [self.selectedBackgroundView isKindOfClass:[UIImageView class]] && [(UIImageView *)self.selectedBackgroundView image]) {
+            self.selectedBackgroundView.backgroundColor = [UIColor clearColor];
+        }else{ // 无颜色，无图片
+            self.selectedBackgroundView = nil;
+        }
     }
 }
 
 - (void)setYq_bgColor:(UIColor *)yq_bgColor{
     if (yq_bgColor) {
-        self.yq_bgView.backgroundColor = yq_bgColor;
-        self.backgroundView = self.yq_bgView;
+        if (self.backgroundView == nil) {
+            self.backgroundView = [self yq_createBgView];
+        }
+        self.backgroundView.backgroundColor = yq_bgColor;
     }else{
-        self.backgroundView = nil;
+        if (self.backgroundView && [self.backgroundView isKindOfClass:[UIImageView class]] && [(UIImageView *)self.backgroundView image]) {
+            self.backgroundView.backgroundColor = [UIColor clearColor];
+        }else{
+            self.backgroundView = nil;
+        }
+    }
+}
+
+- (void)setYq_bgImage:(UIImage *)yq_bgImage{
+    if (!yq_bgImage) {  // 无图片
+        if ((self.backgroundView && self.backgroundView.backgroundColor && ![self.backgroundView.backgroundColor isEqual:[UIColor clearColor]]) == NO) { // 无颜色
+            self.backgroundView = nil;
+        }
+    }else{
+        UIColor *color = nil;
+        if (self.backgroundView == nil || ![self.backgroundView isKindOfClass:[UIImageView class]]) {
+            color = self.backgroundView.backgroundColor ?: [UIColor clearColor];
+            self.backgroundView = [self yq_createBgImageView];
+        }
+        self.backgroundView.backgroundColor = color;
+        [(UIImageView *)self.backgroundView setImage:yq_bgImage];
+    }
+}
+
+- (void)setYq_selectBgImage:(UIImage *)yq_selectBgImage{
+    if (!yq_selectBgImage) {
+        if ((self.selectedBackgroundView && self.selectedBackgroundView.backgroundColor && ![self.selectedBackgroundView.backgroundColor isEqual:[UIColor clearColor]]) == NO) {
+            self.selectedBackgroundView = nil;
+        }
+    }else{
+        UIColor *color = nil;
+        if (self.selectedBackgroundView == nil || ![self.selectedBackgroundView isKindOfClass:[UIImageView class]]) {
+            color = self.selectedBackgroundView.backgroundColor ?: [UIColor clearColor];
+            self.selectedBackgroundView = [self yq_createSelectBgImageView];
+        }
+        self.selectedBackgroundView.backgroundColor = color;
+        [(UIImageView *)self.selectedBackgroundView setImage:yq_selectBgImage];
     }
 }
 

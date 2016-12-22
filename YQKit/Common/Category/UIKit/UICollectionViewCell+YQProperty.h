@@ -13,4 +13,7 @@
 @property (nonatomic, strong) UIColor *yq_selectBgColor;
 @property (nonatomic, strong) UIColor *yq_bgColor;
 
+@property (nonatomic, strong) UIImage *yq_selectBgImage;
+@property (nonatomic, strong) UIImage *yq_bgImage;
+
 @end

@@ -23,5 +23,7 @@
 #import "UIButton+YQCategory.h"
 #import "UIScrollView+YQCategory.h"
 #import "UISearchBar+YQCategory.h"
+#import "UIScrollView+YQScaleHeader.h"
+#import "UIAlertController+YQCategory.h"
 
 #endif /* YQCategoryForUIKit_h */

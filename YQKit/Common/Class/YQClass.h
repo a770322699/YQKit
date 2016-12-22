@@ -10,5 +10,6 @@
 #define YQClass_h
 
 #import "YQClassForUIKit.h"
+#import "YQAuthorityManager.h"
 
 #endif /* YQClass_h */

@@ -15,5 +15,6 @@
 #import "YQConst.h"
 #import "YQSynthesizeSingleton.h"
 #import "YQFunction.h"
+#import "YQSimpleFunc.h"
 
 #endif /* YQGlobalValue_h */
