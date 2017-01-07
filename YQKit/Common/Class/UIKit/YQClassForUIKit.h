@@ -10,5 +10,6 @@
 #define YQClassForUIKit_h
 
 #import "YQIntrinsicContentSizeView.h"
+#import "YQModalView.h"
 
 #endif /* YQClassForUIKit_h */

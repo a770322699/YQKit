@@ -18,11 +18,15 @@
 
 #import "YQNetworkingManager+Create.h"
 
+#import "YQTestModelView.h"
+
 @interface ViewController ()<YQViewSidelineDataSource, UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIButton *timeButton;
 @property (nonatomic, strong) dispatch_source_t timer;
 @property (nonatomic, strong) YQLoadingView *loadingView;
+
+@property (nonatomic, strong) YQTestModelView *modelView;
 
 @end
 
@@ -43,25 +47,27 @@
 //    
 //    [self.timeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
     
-    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(0, -80 - 200, 320, 360)];
-    view.image = [UIImage imageNamed:@"bg"];
+//    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(0, -80 - 200, 320, 360)];
+//    view.image = [UIImage imageNamed:@"bg"];
+//    
+//    UILabel *label = [[UILabel alloc] init];
+//    label.translatesAutoresizingMaskIntoConstraints = NO;
+//    label.text = @"及福利大咖";
+//    label.textColor = [UIColor redColor];
+//    label.backgroundColor = [UIColor cyanColor];
+//    [view addSubview:label];
+//    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.mas_equalTo(view);
+//    }];
+//    
+//    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+//    tableView.delegate = self;
+//    tableView.dataSource = self;
+//    tableView.yq_scaleHeaderView = view;
+//    tableView.yq_scaleHeaderViewVisibleHeight = 200;
+//    [self.view addSubview:tableView];
     
-    UILabel *label = [[UILabel alloc] init];
-    label.translatesAutoresizingMaskIntoConstraints = NO;
-    label.text = @"及福利大咖";
-    label.textColor = [UIColor redColor];
-    label.backgroundColor = [UIColor cyanColor];
-    [view addSubview:label];
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(view);
-    }];
-    
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    tableView.yq_scaleHeaderView = view;
-    tableView.yq_scaleHeaderViewVisibleHeight = 200;
-    [self.view addSubview:tableView];
+    self.modelView = [[YQTestModelView alloc] init];
 }
 
 
@@ -158,21 +164,27 @@
 //        [self.loadingView showSuccess:@"成功"];
 //        i = 0;
 //    }
+//    
+//    YQNetworkingManager *manager = [YQNetworkingManager demoDataManagerWithId:0];
+//    [manager startWithCompletion:^(YQNetworkingResult *result) {
+//        NSLog(@"%@", result.URL);
+//    }];
+//    
+//    manager = [YQNetworkingManager demoUploadDataManagerMole:0];
+//    [manager startWithCompletion:^(YQNetworkingResult *result) {
+//        NSLog(@"%@", result.URL);
+//    }];
+//    
+//    manager = [YQNetworkingManager demoDownloadManager];
+//    [manager startWithCompletion:^(YQNetworkingResult *result) {
+//        NSLog(@"%@", result.URL);
+//    }];
     
-    YQNetworkingManager *manager = [YQNetworkingManager demoDataManagerWithId:0];
-    [manager startWithCompletion:^(YQNetworkingResult *result) {
-        NSLog(@"%@", result.URL);
-    }];
-    
-    manager = [YQNetworkingManager demoUploadDataManagerMole:0];
-    [manager startWithCompletion:^(YQNetworkingResult *result) {
-        NSLog(@"%@", result.URL);
-    }];
-    
-    manager = [YQNetworkingManager demoDownloadManager];
-    [manager startWithCompletion:^(YQNetworkingResult *result) {
-        NSLog(@"%@", result.URL);
-    }];
+    if (self.modelView.isShow) {
+        [self.modelView dismiss];
+    }else{
+        [self.modelView show];
+    }
     
 }
 

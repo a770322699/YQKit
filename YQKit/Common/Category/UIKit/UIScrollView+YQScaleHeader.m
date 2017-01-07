@@ -8,6 +8,9 @@
 
 #import <objc/runtime.h>
 
+#import "UIView+YQFrame.h"
+#import "YQFunction.h"
+
 #import "UIScrollView+YQScaleHeader.h"
 
 @interface YQScaleHeaderObserver : NSObject
@@ -18,11 +21,6 @@
 @end
 
 @implementation YQScaleHeaderObserver
-
-#pragma mark - override
-- (void)dealloc{
-    [self removeObserverTarget];
-}
 
 #pragma mark - getter
 - (NSString *)observerKeyPath{
@@ -37,6 +35,7 @@
 
 - (void)removeObserverTarget{
     [self.targetView removeObserver:self forKeyPath:self.observerKeyPath];
+    self.targetView = nil;
 }
 
 #pragma mark - KVO回调
@@ -115,6 +114,7 @@ static const char *kRuntimeSaveKey_headerView = "kRuntimeSaveKey_headerView";
 static const char *kRuntimeSaveKey_scaleHeaderViewVisibleHeight = "kRuntimeSaveKey_scaleHeaderViewVisibleHeight";
 static const char *kRuntimeSaveKey_scaleRatio = "kRuntimeSaveKey_scaleRatio";
 static const char *kRuntimeSaveKey_scalePoint = "kRuntimeSaveKey_scalePoint";
+static const char *kRuntimeSaveKey_swizzledDealloc = "kRuntimeSaveKey_swizzledDeallocForScaleHeader";
 
 @implementation UIScrollView (YQScaleHeader)
 
@@ -129,6 +129,13 @@ static const char *kRuntimeSaveKey_scalePoint = "kRuntimeSaveKey_scalePoint";
 }
 
 - (void)setYq_scaleHeaderView:(UIView *)yq_scaleHeaderView{
+    
+    // 交换delloc方法
+    BOOL swizzled = [objc_getAssociatedObject(self.class, kRuntimeSaveKey_swizzledDealloc) boolValue];
+    if (!swizzled) {
+        YQSwizzle([self class], NSSelectorFromString(@"dealloc"), @selector(yq_deallocForScaleHeaderPrivate));
+        objc_setAssociatedObject(self.class, kRuntimeSaveKey_swizzledDealloc, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
     
     // 移除原来的视图
     if (self.yq_scaleHeaderView && self.yq_scaleHeaderView != yq_scaleHeaderView) {
@@ -227,6 +234,17 @@ static const char *kRuntimeSaveKey_scalePoint = "kRuntimeSaveKey_scalePoint";
     CGFloat centerY = self.yq_scalePoint.y * self.yq_scaleHeaderView.yq_height + self.yq_scaleHeaderView.yq_y;
     self.yq_scaleHeaderView.layer.anchorPoint = self.yq_scalePoint;
     self.yq_scaleHeaderView.center = CGPointMake(centerX, centerY);
+}
+
+// 交换的delloc方法
+- (void)yq_deallocForScaleHeaderPrivate{
+    // 不能直接调用[self.yq_scaleObserve removeObserverTarget];因为此时self.yq_scaleObserve.targetView已经为nil
+    YQScaleHeaderObserver *observer = objc_getAssociatedObject(self, kRuntimeSaveKey_scaleObserve);
+    if (observer) {
+        [self removeObserver:observer forKeyPath:observer.observerKeyPath];
+    }
+    
+    [self yq_deallocForScaleHeaderPrivate];
 }
 
 @end

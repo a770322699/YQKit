@@ -31,4 +31,18 @@
     return nil;
 }
 
+// 递归查找所有子视图
+- (NSArray<UIView *> *)yq_allSubviews{
+    NSMutableArray *resultViews = [NSMutableArray array];
+    for (UIView *subView in self.subviews) {
+        [resultViews addObject:subView];
+        NSArray *subViews = subView.yq_allSubviews;
+        if (subViews) {
+            [resultViews addObjectsFromArray:subView.yq_allSubviews];
+        }
+    }
+    
+    return resultViews.count ? resultViews : nil;
+}
+
 @end

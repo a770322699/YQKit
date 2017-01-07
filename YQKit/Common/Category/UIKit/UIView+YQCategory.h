@@ -12,5 +12,6 @@
 
 @property (nonatomic, readonly) UIViewController *yq_viewController;
 @property (nonatomic, readonly) UIView *yq_firstResponseView;                  
+@property (nonatomic, readonly) NSArray<UIView *> *yq_allSubviews;        // 递归查找所有子视图
 
 @end

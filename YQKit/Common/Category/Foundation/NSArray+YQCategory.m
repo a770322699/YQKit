@@ -108,7 +108,7 @@
     return [self yq_arrayWithPlistData:data];
 }
 
-- (void)removeFirstObject {
+- (void)yq_removeFirstObject {
     if (self.count) {
         [self removeObjectAtIndex:0];
     }
@@ -129,7 +129,7 @@
     id obj = nil;
     if (self.count) {
         obj = self.firstObject;
-        [self removeFirstObject];
+        [self yq_removeFirstObject];
     }
     return obj;
 }
