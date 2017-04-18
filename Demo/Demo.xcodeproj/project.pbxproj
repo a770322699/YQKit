@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AFD500E1EA22AAD0025B5FE /* YQValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD500D1EA22AAD0025B5FE /* YQValue.m */; };
 		D4B1F93DA308FCAD70B499A8 /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C45CB438FB36BEB029E1C5D /* libPods-Demo.a */; };
 		D806E6981DCC761C000B8F98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D806E6971DCC761C000B8F98 /* main.m */; };
 		D806E69B1DCC761C000B8F98 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D806E69A1DCC761C000B8F98 /* AppDelegate.m */; };
@@ -62,6 +63,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4AFD50091EA229D20025B5FE /* YQStruct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YQStruct.h; sourceTree = "<group>"; };
+		4AFD500C1EA22AAD0025B5FE /* YQValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQValue.h; sourceTree = "<group>"; };
+		4AFD500D1EA22AAD0025B5FE /* YQValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQValue.m; sourceTree = "<group>"; };
+		4AFD50101EA22D4B0025B5FE /* YQClassForFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YQClassForFoundation.h; sourceTree = "<group>"; };
 		6C45CB438FB36BEB029E1C5D /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C70B2C89E8F46D3BB26FFD8 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		96080BA75A457CDFC7577CCD /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +202,24 @@
 				6C45CB438FB36BEB029E1C5D /* libPods-Demo.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4AFD500A1EA22A840025B5FE /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				4AFD50101EA22D4B0025B5FE /* YQClassForFoundation.h */,
+				4AFD500B1EA22A9A0025B5FE /* YQValue */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		4AFD500B1EA22A9A0025B5FE /* YQValue */ = {
+			isa = PBXGroup;
+			children = (
+				4AFD500C1EA22AAD0025B5FE /* YQValue.h */,
+				4AFD500D1EA22AAD0025B5FE /* YQValue.m */,
+			);
+			path = YQValue;
 			sourceTree = "<group>";
 		};
 		D806E68A1DCC761C000B8F98 = {
@@ -421,20 +444,13 @@
 		D8D1520B1DDD83BD000F2DB0 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				4AFD500A1EA22A840025B5FE /* Foundation */,
 				D837310D1E0A2EA000158CE7 /* Other */,
-				D8D1520C1DDD83BD000F2DB0 /* Foundation */,
 				D8D1520D1DDD83BD000F2DB0 /* README.md */,
 				D8D1520E1DDD83BD000F2DB0 /* UIKit */,
 				D8D152121DDD83BD000F2DB0 /* YQClass.h */,
 			);
 			path = Class;
-			sourceTree = "<group>";
-		};
-		D8D1520C1DDD83BD000F2DB0 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Foundation;
 			sourceTree = "<group>";
 		};
 		D8D1520E1DDD83BD000F2DB0 /* UIKit */ = {
@@ -461,6 +477,7 @@
 				D8D152191DDD83BD000F2DB0 /* YQMacro.h */,
 				D8D1521A1DDD83BD000F2DB0 /* YQSimpleFunc.h */,
 				D8D1521B1DDD83BD000F2DB0 /* YQSynthesizeSingleton.h */,
+				4AFD50091EA229D20025B5FE /* YQStruct.h */,
 			);
 			path = GlobalValue;
 			sourceTree = "<group>";
@@ -656,6 +673,7 @@
 				D8CD0CB81DF001C900641E05 /* YQNetworkingManager.m in Sources */,
 				D806E69B1DCC761C000B8F98 /* AppDelegate.m in Sources */,
 				D8D1521F1DDD83BD000F2DB0 /* NSObject+YQCoder.m in Sources */,
+				4AFD500E1EA22AAD0025B5FE /* YQValue.m in Sources */,
 				D8CD0CCA1DF118F200641E05 /* AFHTTPSessionManager+Download.m in Sources */,
 				D8D1521C1DDD83BD000F2DB0 /* NSArray+YQCategory.m in Sources */,
 				D806E6981DCC761C000B8F98 /* main.m in Sources */,

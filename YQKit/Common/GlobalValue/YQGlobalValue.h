@@ -17,5 +17,6 @@
 #import "YQFunction.h"
 #import "YQSimpleFunc.h"
 #import "YQCorlorConst.h"
+#import "YQStruct.h"
 
 #endif /* YQGlobalValue_h */
