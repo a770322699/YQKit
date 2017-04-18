@@ -79,7 +79,7 @@ static const char *kRuntimeSaveKey_delegate     = "kRuntimeSaveKey_yq_emptyDeleg
 #pragma mark - DZNEmptyDataSetDelegate
 - (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView{
     BOOL *shouldDisplay = scrollView.yq_shouldDisplayEmpty;
-    return *shouldDisplay;
+    return shouldDisplay ? *shouldDisplay : NO;
 }
 
 - (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView{

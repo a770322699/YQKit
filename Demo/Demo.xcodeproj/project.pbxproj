@@ -25,6 +25,7 @@
 		D83731091E090C6500158CE7 /* UIAlertController+YQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D83731081E090C6500158CE7 /* UIAlertController+YQCategory.m */; };
 		D83731111E0A2EC900158CE7 /* YQAuthorityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D83731101E0A2EC900158CE7 /* YQAuthorityManager.m */; };
 		D853DACD1EA5AA7A003EBC87 /* UIScrollView+YQEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D853DACC1EA5AA7A003EBC87 /* UIScrollView+YQEmptyDataSet.m */; };
+		D853DD021EA5E58E003EBC87 /* YQKeyboardServer.m in Sources */ = {isa = PBXBuildFile; fileRef = D853DD011EA5E58E003EBC87 /* YQKeyboardServer.m */; };
 		D865AB731E029CF400101AA5 /* UIScrollView+YQScaleHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D865AB721E029CF400101AA5 /* UIScrollView+YQScaleHeader.m */; };
 		D865AB751E02BF0100101AA5 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D865AB741E02BF0100101AA5 /* bg@2x.png */; };
 		D88D3E001DEEAB330099DB2D /* YQNetworkingResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D88D3DFF1DEEAB330099DB2D /* YQNetworkingResult.m */; };
@@ -101,6 +102,8 @@
 		D83731101E0A2EC900158CE7 /* YQAuthorityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQAuthorityManager.m; sourceTree = "<group>"; };
 		D853DACB1EA5AA7A003EBC87 /* UIScrollView+YQEmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YQEmptyDataSet.h"; sourceTree = "<group>"; };
 		D853DACC1EA5AA7A003EBC87 /* UIScrollView+YQEmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YQEmptyDataSet.m"; sourceTree = "<group>"; };
+		D853DD001EA5E58E003EBC87 /* YQKeyboardServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQKeyboardServer.h; sourceTree = "<group>"; };
+		D853DD011EA5E58E003EBC87 /* YQKeyboardServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQKeyboardServer.m; sourceTree = "<group>"; };
 		D865AB711E029CF400101AA5 /* UIScrollView+YQScaleHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YQScaleHeader.h"; sourceTree = "<group>"; };
 		D865AB721E029CF400101AA5 /* UIScrollView+YQScaleHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YQScaleHeader.m"; sourceTree = "<group>"; };
 		D865AB741E02BF0100101AA5 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
@@ -312,6 +315,7 @@
 		D837310D1E0A2EA000158CE7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				D853DCFF1EA5E57D003EBC87 /* KeyboardServer */,
 				D837310E1E0A2EA000158CE7 /* AuthorityManage */,
 			);
 			path = Other;
@@ -324,6 +328,15 @@
 				D83731101E0A2EC900158CE7 /* YQAuthorityManager.m */,
 			);
 			path = AuthorityManage;
+			sourceTree = "<group>";
+		};
+		D853DCFF1EA5E57D003EBC87 /* KeyboardServer */ = {
+			isa = PBXGroup;
+			children = (
+				D853DD001EA5E58E003EBC87 /* YQKeyboardServer.h */,
+				D853DD011EA5E58E003EBC87 /* YQKeyboardServer.m */,
+			);
+			path = KeyboardServer;
 			sourceTree = "<group>";
 		};
 		D88D3DFA1DED7D8D0099DB2D /* Networking */ = {
@@ -678,6 +691,7 @@
 				D8D1521C1DDD83BD000F2DB0 /* NSArray+YQCategory.m in Sources */,
 				D806E6981DCC761C000B8F98 /* main.m in Sources */,
 				D8D152241DDD83BD000F2DB0 /* UIButton+YQCategory.m in Sources */,
+				D853DD021EA5E58E003EBC87 /* YQKeyboardServer.m in Sources */,
 				D8D1522B1DDD83BD000F2DB0 /* UITableViewCell+YQCategory.m in Sources */,
 				D8D1522F1DDD83BD000F2DB0 /* UIView+YQSideline.m in Sources */,
 				D8D152341DDD83BD000F2DB0 /* YQFunction.m in Sources */,
