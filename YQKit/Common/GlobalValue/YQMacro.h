@@ -13,6 +13,8 @@
 
 // 按屏幕尺寸等比缩放
 #define YQScaleSize(size, baseSize, scaleBaseSize) (size * scaleBaseSize / baseSize)
+// 按iPhone6的宽度适配
+#define YQScaleSizeBaseIphone6(size) YQScaleSize(size, kYQIPHONE6_WIDTH, kYQScreenWidth)
 
 // 颜色
 #define YQRGBA(R,G,B,A)  [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
