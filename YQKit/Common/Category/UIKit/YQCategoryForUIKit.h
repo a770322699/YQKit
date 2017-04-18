@@ -7,6 +7,7 @@
 //
 
 // 该框架必须依赖：Masonry库
+// YQEmptyDataSet 依赖 DZNEmptyDataSet
 
 #ifndef YQCategoryForUIKit_h
 #define YQCategoryForUIKit_h
@@ -25,5 +26,6 @@
 #import "UISearchBar+YQCategory.h"
 #import "UIScrollView+YQScaleHeader.h"
 #import "UIAlertController+YQCategory.h"
+#import "UIScrollView+YQEmptyDataSet.h"
 
 #endif /* YQCategoryForUIKit_h */
