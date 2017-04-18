@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - DZNEmptyDataSet (1.8.1)
   - Masonry (1.0.2)
   - YQLoadingView (1.0.0):
     - YQLoadingView/Code (= 1.0.0)
@@ -24,14 +25,16 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - DZNEmptyDataSet (~> 1.8)
   - Masonry
   - YQLoadingView
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   YQLoadingView: 37371fcca8246ebed731d3a84fbf7ac6f419c4f0
 
-PODFILE CHECKSUM: 67512f3fcbb289e54a605fa2f5512b0c4e6928ae
+PODFILE CHECKSUM: f0603309e8efb52778d779546caaf5523dcece5c
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

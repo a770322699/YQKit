@@ -7,6 +7,7 @@
 //
 
 // 该框架必须依赖：Masonry库
+// YQEmptyDataSet 依赖 DZNEmptyDataSet
 
 #ifndef YQCategory_h
 #define YQCategory_h

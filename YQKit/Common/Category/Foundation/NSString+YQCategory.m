@@ -118,8 +118,12 @@
 }
 
 // 根据格式显示时间
-+ (NSString *)yq_dateStringWithDate:(NSTimeInterval) date formatter:(NSString *)formatter{
-    
++ (NSString *)yq_dateStringWithDate1970:(NSTimeInterval) date formatter:(NSString *)formatter{
+    return [self yq_dateStringWithDate:[NSDate dateWithTimeIntervalSince1970:date] formatter:formatter];
+}
+
+// 根据格式显示时间
++ (NSString *)yq_dateStringWithDate:(NSDate *)date formatter:(NSString *)formatter{
     static NSDateFormatter *dateFormatter = nil;
     @synchronized(@"dateFormatter"){
         if (dateFormatter == nil) {
@@ -128,7 +132,7 @@
     }
     
     dateFormatter.dateFormat = formatter;
-    return [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:date]];
+    return [dateFormatter stringFromDate:date];
 }
 
 /**
@@ -161,7 +165,7 @@
     [calendar rangeOfUnit:NSCalendarUnitYear startDate:&toYear interval:NULL forDate:[NSDate date]];
     NSDateComponents *yearComponents = [calendar components:NSCalendarUnitYear fromDate:fromYear toDate:toYear options:0];
     
-    return [self yq_dateStringWithDate:date formatter:formatter(dayComponents.day, monthComponents.month, yearComponents.year)];
+    return [self yq_dateStringWithDate1970:date formatter:formatter(dayComponents.day, monthComponents.month, yearComponents.year)];
 }
 
 @end

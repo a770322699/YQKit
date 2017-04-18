@@ -12,4 +12,10 @@
 #import "YQIntrinsicContentSizeView.h"
 #import "YQModalView.h"
 
+#import "YQMarginView.h"
+#import "YQMarginLabel.h"
+
+#import "YQCombinationView.h"
+#import "YQImageTextView.h"
+
 #endif /* YQClassForUIKit_h */

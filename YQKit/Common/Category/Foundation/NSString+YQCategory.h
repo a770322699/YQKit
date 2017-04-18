@@ -26,7 +26,9 @@
 + (NSString *)yq_jsonStringWithObject:(id)object;
 
 // 根据格式显示时间
-+ (NSString *)yq_dateStringWithDate:(NSTimeInterval) date formatter:(NSString *)formatter;
++ (NSString *)yq_dateStringWithDate1970:(NSTimeInterval) date formatter:(NSString *)formatter;
+// 根据格式显示时间
++ (NSString *)yq_dateStringWithDate:(NSDate *)date formatter:(NSString *)formatter;
 
 /**
  *  根据距离今天的天数从formatter中获取格式化字符串，并根据格式化字符串格式化时间

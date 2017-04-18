@@ -10,5 +10,6 @@ target 'Demo' do
     pod 'Masonry'
     pod 'AFNetworking'
     pod 'YQLoadingView'
+    pod 'DZNEmptyDataSet',  '~>1.8'
 
 end

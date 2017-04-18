@@ -11,7 +11,7 @@
 #ifndef YQSimpleFunc_h
 #define YQSimpleFunc_h
 
-#import "UIKit/UIKit.h"
+#import <UIKit/UIKit.h>
 
 // 通过一个原点和一个size创建一个rect
 static inline CGRect YQRectMakeOriginSize(CGPoint origin, CGSize size){
