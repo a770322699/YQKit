@@ -27,6 +27,13 @@
 + (instancetype)valueWithIntPoint:(YQIntPoint)point{
     return [[self alloc] initWithIntPoint:point];
 }
+- (instancetype)intPointValueWithOffsetIntPoint:(YQIntPoint)offsetPoint{
+    YQValue *pointValue = [YQValue valueWithIntPoint:self.point];
+    YQIntPoint point = YQIntPointMake(pointValue.point.x + offsetPoint.x, pointValue.point.y + offsetPoint.y);
+    pointValue.point = point;
+    
+    return pointValue;
+}
 - (YQIntPoint)intPoint{
     return self.point;
 }

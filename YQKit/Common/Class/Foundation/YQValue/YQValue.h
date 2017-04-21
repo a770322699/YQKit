@@ -14,6 +14,7 @@
 
 - (instancetype)initWithIntPoint:(YQIntPoint)point;
 + (instancetype)valueWithIntPoint:(YQIntPoint)point;
+- (instancetype)intPointValueWithOffsetIntPoint:(YQIntPoint)offsetPoint;
 - (YQIntPoint)intPoint;
 
 - (instancetype)initWithIntSize:(YQIntSize)size;
