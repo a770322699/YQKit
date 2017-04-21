@@ -24,8 +24,8 @@
 
 - (void)dealloc{
     // 移除监听
-    [self.leadingView removeObserver:self forKeyPath:NSStringFromSelector(@selector(isHidden))];
-    [self.trailingView removeObserver:self forKeyPath:NSStringFromSelector(@selector(isHidden))];
+    [self.leadingView removeObserver:self forKeyPath:@"hidden"];
+    [self.trailingView removeObserver:self forKeyPath:@"hidden"];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -52,8 +52,8 @@
         self.viewPriority = YQCombinationViewIntrinsicPriority_leading;
         
         // 添加监听，当有视图隐藏时需要更新约束
-        [leading addObserver:self forKeyPath:NSStringFromSelector(@selector(isHidden)) options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
-        [trailing addObserver:self forKeyPath:NSStringFromSelector(@selector(isHidden)) options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
+        [leading addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
+        [trailing addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
     }
     return self;
 }
