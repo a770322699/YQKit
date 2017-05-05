@@ -24,6 +24,7 @@
 
 // 图片
 #define YQImage(imageName)    [UIImage imageNamed:[NSString stringWithFormat:@"%@", imageName]]
+#define YQRenderingOriginalImage(imageName) [YQImage(imageName) imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
 
 // 设置视图圆角
 #define YQViewBorderRadius(View, Radius, Width, Color)\

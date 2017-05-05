@@ -56,4 +56,7 @@
 //颜色均值AverageColor
 - (UIColor *)yq_averageColor;
 
+// 获取icon
++ (UIImage *)yq_iconImageWithSize:(CGSize)size;
+
 @end

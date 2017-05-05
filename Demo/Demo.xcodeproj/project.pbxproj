@@ -15,6 +15,7 @@
 		D806E6A11DCC761C000B8F98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D806E69F1DCC761C000B8F98 /* Main.storyboard */; };
 		D806E6A31DCC761C000B8F98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D806E6A21DCC761C000B8F98 /* Assets.xcassets */; };
 		D806E6A61DCC761C000B8F98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D806E6A41DCC761C000B8F98 /* LaunchScreen.storyboard */; };
+		D807CB941EBB4C1700626FE0 /* YQNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D807CB931EBB4C1700626FE0 /* YQNotificationView.m */; };
 		D81229D21E88BB6400AD5BA3 /* YQMarginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D81229D11E88BB6400AD5BA3 /* YQMarginView.m */; };
 		D81229D51E88BEA200AD5BA3 /* YQMarginLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81229D41E88BEA200AD5BA3 /* YQMarginLabel.m */; };
 		D81229D91E88C27B00AD5BA3 /* YQCombinationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D81229D81E88C27B00AD5BA3 /* YQCombinationView.m */; };
@@ -81,6 +82,8 @@
 		D806E6A21DCC761C000B8F98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D806E6A51DCC761C000B8F98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D806E6A71DCC761C000B8F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D807CB921EBB4C1700626FE0 /* YQNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQNotificationView.h; sourceTree = "<group>"; };
+		D807CB931EBB4C1700626FE0 /* YQNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNotificationView.m; sourceTree = "<group>"; };
 		D81229D01E88BB6400AD5BA3 /* YQMarginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQMarginView.h; sourceTree = "<group>"; };
 		D81229D11E88BB6400AD5BA3 /* YQMarginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQMarginView.m; sourceTree = "<group>"; };
 		D81229D31E88BEA200AD5BA3 /* YQMarginLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQMarginLabel.h; sourceTree = "<group>"; };
@@ -270,6 +273,15 @@
 				D806E6971DCC761C000B8F98 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D807CB911EBB4C0400626FE0 /* YQNotificationView */ = {
+			isa = PBXGroup;
+			children = (
+				D807CB921EBB4C1700626FE0 /* YQNotificationView.h */,
+				D807CB931EBB4C1700626FE0 /* YQNotificationView.m */,
+			);
+			path = YQNotificationView;
 			sourceTree = "<group>";
 		};
 		D81229CF1E88BB5700AD5BA3 /* YQMarginView */ = {
@@ -470,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				D8D1520F1DDD83BD000F2DB0 /* YQClassForUIKit.h */,
+				D807CB911EBB4C0400626FE0 /* YQNotificationView */,
 				D81229D61E88C0CB00AD5BA3 /* YQCombinationView */,
 				D81229CF1E88BB5700AD5BA3 /* YQMarginView */,
 				D81894711E15F36000283E30 /* YQModalView */,
@@ -702,6 +715,7 @@
 				D8CD0CC11DF0089A00641E05 /* YQDataNetworkingManager.m in Sources */,
 				D8D152221DDD83BD000F2DB0 /* NSString+YQURL.m in Sources */,
 				D8D1522C1DDD83BD000F2DB0 /* UIView+YQCategory.m in Sources */,
+				D807CB941EBB4C1700626FE0 /* YQNotificationView.m in Sources */,
 				D8D6FE3D1E150576003BB3A3 /* YQModelStore.m in Sources */,
 				D8D152271DDD83BD000F2DB0 /* UIImage+YQCategory.m in Sources */,
 				D81894771E163F3C00283E30 /* YQTestModelView.m in Sources */,

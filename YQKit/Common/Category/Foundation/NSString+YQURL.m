@@ -35,4 +35,24 @@
     return [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
+// 添加参数
+- (NSString *)yq_appendURLParameter:(NSDictionary *)parameter{
+    if (parameter.count == 0) {
+        return self;
+    }
+    
+    NSMutableArray *parameterArray = [NSMutableArray array];
+    for (NSString *key in parameter) {
+        [parameterArray addObject:[NSString stringWithFormat:@"%@=%@", key, parameter[key]]];
+    }
+    NSString *query = [parameterArray componentsJoinedByString:@"&"];
+    
+    NSString *connectSymbol = @"?";
+    if ([self rangeOfString:@"?"].location != NSNotFound) {
+        connectSymbol = @"&";
+    }
+    
+    return [NSString stringWithFormat:@"%@%@%@", self, connectSymbol, query];
+}
+
 @end

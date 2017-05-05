@@ -490,4 +490,19 @@
     }
 }
 
+// 获取icon
++ (UIImage *)yq_iconImageWithSize:(CGSize)size{
+    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+    NSArray *iconNames = infoDic[@"CFBundleIcons"][@"CFBundlePrimaryIcon"][@"CFBundleIconFiles"];
+    
+    NSString *sizeString = [NSString stringWithFormat:@"%dx%d", (int)size.width, (int)size.height];
+    for (NSString *iconName in iconNames) {
+        if ([iconName hasSuffix:sizeString]) {
+            return [UIImage imageNamed:iconName];
+        }
+    }
+    return nil;
+}
+
+
 @end

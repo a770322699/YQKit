@@ -18,4 +18,8 @@
 #import "YQCombinationView.h"
 #import "YQImageTextView.h"
 
+#import "YQNotificationView.h"
+
+#improt
+
 #endif /* YQClassForUIKit_h */

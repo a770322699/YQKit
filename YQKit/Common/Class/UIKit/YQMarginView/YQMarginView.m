@@ -36,7 +36,7 @@
         if (contentView) {
             [self addSubview:contentView];
             [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.edges.mas_equalTo(self.contenMargin);
+                self.marginConstraint = make.edges.mas_equalTo(self.contenMargin);
             }];
         }
     }
