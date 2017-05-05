@@ -9,7 +9,6 @@
 #import "Masonry.h"
 
 #import "YQGlobalValue.h"
-
 #import "YQNotificationView.h"
 #import "YQCombinationView.h"
 
@@ -21,7 +20,7 @@ static const CGFloat        kTitleDescSpace     = 2.0;
 static const CGFloat        kImageTextSpace     = 5.0;
 
 #define kContentInsets      UIEdgeInsetsMake(5, 5, 5, 5)
-#define kBgViewInsets       UIEdgeInsetsMake(5, 5, 5, 5)
+#define kBgViewInsets       UIEdgeInsetsMake(20, 5, 5, 5)
 
 static const NSTimeInterval kAnimationDuration  = 0.25;
 static const NSTimeInterval kDisplayDuration    = 2;
@@ -81,7 +80,7 @@ static const NSTimeInterval kDisplayDuration    = 2;
         }];
         
         self.translatesAutoresizingMaskIntoConstraints = NO;
-        self.backgroundColor = kYQColorClear;
+        self.backgroundColor = [kYQColorBlack colorWithAlphaComponent:0.6];
         [self addSubview:bgView];
         [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(kBgViewInsets);
@@ -93,6 +92,7 @@ static const NSTimeInterval kDisplayDuration    = 2;
 - (void)updateConstraints{
     [super updateConstraints];
     
+    self.titleDescSpaceConstraint.offset = self.title.length && self.desc.length ? kTitleDescSpace : 0;
     if (self.superview) {
         [self.yConstraint uninstall];
         [self mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -103,14 +103,13 @@ static const NSTimeInterval kDisplayDuration    = 2;
             }
         }];
     }
-    
-    self.titleDescSpaceConstraint.offset = self.title.length && self.desc.length ? kTitleDescSpace : 0;
 }
 
 #pragma mark - getter
 - (UIImageView *)imageView{
     if (!_imageView) {
         _imageView = [[UIImageView alloc] init];
+        YQViewBorderRadius(_imageView, 4, 0, kYQColorClear);
         _imageView.backgroundColor = [UIColor clearColor];
         _imageView.translatesAutoresizingMaskIntoConstraints = NO;
     }
@@ -138,15 +137,30 @@ static const NSTimeInterval kDisplayDuration    = 2;
     return _descLabel;
 }
 
+#pragma mark - setting
+- (void)setTitle:(NSString *)title{
+    _title = title;
+    self.titleLabel.text = title;
+}
+
+- (void)setDesc:(NSString *)desc{
+    _desc = desc;
+    self.descLabel.text = desc;
+}
+
+- (void)setImage:(UIImage *)image{
+    _image = image;
+    self.imageView.image = image;
+}
+
 #pragma mark - private
 - (void)dismiss{
     self.isShow = NO;
     
     [self setNeedsUpdateConstraints];
-    [self updateFocusIfNeeded];
-    [self setNeedsLayout];
+    [self updateConstraintsIfNeeded];
     [UIView animateWithDuration:self.animationDuration animations:^{
-        [self layoutIfNeeded];
+        [self.superview layoutIfNeeded];
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
     }];
@@ -173,16 +187,16 @@ static const NSTimeInterval kDisplayDuration    = 2;
     self.imageView.hidden = !self.image;
     
     [self setNeedsUpdateConstraints];
-    [self updateFocusIfNeeded];
+    [self updateConstraintsIfNeeded];
+    [self.superview layoutIfNeeded];
     
     self.isShow = YES;
     [self setNeedsUpdateConstraints];
-    [self updateFocusIfNeeded];
-    [self setNeedsLayout];
+    [self updateConstraintsIfNeeded];
     [UIView animateWithDuration:self.animationDuration animations:^{
-        [self layoutIfNeeded];
+        [self.superview layoutIfNeeded];
     } completion:^(BOOL finished) {
-        YQTimerStart(self.displayDuration, 1, NULL, ^{
+        YQTimerStart(self.displayDuration, self.displayDuration, NULL, ^{
             [self dismiss];
         });
     }];
