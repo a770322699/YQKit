@@ -31,6 +31,7 @@
 		D865AB751E02BF0100101AA5 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D865AB741E02BF0100101AA5 /* bg@2x.png */; };
 		D88D3E001DEEAB330099DB2D /* YQNetworkingResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D88D3DFF1DEEAB330099DB2D /* YQNetworkingResult.m */; };
 		D88D3E031DEEB8530099DB2D /* YQNetworkingManager+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = D88D3E021DEEB8530099DB2D /* YQNetworkingManager+Create.m */; };
+		D8C9657B1ED7D48A0028B11B /* YQMultiCombinationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C9657A1ED7D48A0028B11B /* YQMultiCombinationView.m */; };
 		D8CD0CB81DF001C900641E05 /* YQNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0CB71DF001C900641E05 /* YQNetworkingManager.m */; };
 		D8CD0CBE1DF0088100641E05 /* YQUploadNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0CBD1DF0088000641E05 /* YQUploadNetworkingManager.m */; };
 		D8CD0CC11DF0089A00641E05 /* YQDataNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0CC01DF0089A00641E05 /* YQDataNetworkingManager.m */; };
@@ -114,6 +115,8 @@
 		D88D3DFF1DEEAB330099DB2D /* YQNetworkingResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNetworkingResult.m; sourceTree = "<group>"; };
 		D88D3E011DEEB8530099DB2D /* YQNetworkingManager+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YQNetworkingManager+Create.h"; sourceTree = "<group>"; };
 		D88D3E021DEEB8530099DB2D /* YQNetworkingManager+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YQNetworkingManager+Create.m"; sourceTree = "<group>"; };
+		D8C965791ED7D48A0028B11B /* YQMultiCombinationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQMultiCombinationView.h; sourceTree = "<group>"; };
+		D8C9657A1ED7D48A0028B11B /* YQMultiCombinationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQMultiCombinationView.m; sourceTree = "<group>"; };
 		D8CD0CB61DF001C900641E05 /* YQNetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQNetworkingManager.h; sourceTree = "<group>"; };
 		D8CD0CB71DF001C900641E05 /* YQNetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNetworkingManager.m; sourceTree = "<group>"; };
 		D8CD0CBC1DF0088000641E05 /* YQUploadNetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQUploadNetworkingManager.h; sourceTree = "<group>"; };
@@ -302,6 +305,8 @@
 				D81229D81E88C27B00AD5BA3 /* YQCombinationView.m */,
 				D81229DA1E88E70C00AD5BA3 /* YQImageTextView.h */,
 				D81229DB1E88E70C00AD5BA3 /* YQImageTextView.m */,
+				D8C965791ED7D48A0028B11B /* YQMultiCombinationView.h */,
+				D8C9657A1ED7D48A0028B11B /* YQMultiCombinationView.m */,
 			);
 			path = YQCombinationView;
 			sourceTree = "<group>";
@@ -697,6 +702,7 @@
 				D81894741E15F60D00283E30 /* YQModalView.m in Sources */,
 				D81229D51E88BEA200AD5BA3 /* YQMarginLabel.m in Sources */,
 				D8CD0CB81DF001C900641E05 /* YQNetworkingManager.m in Sources */,
+				D8C9657B1ED7D48A0028B11B /* YQMultiCombinationView.m in Sources */,
 				D806E69B1DCC761C000B8F98 /* AppDelegate.m in Sources */,
 				D8D1521F1DDD83BD000F2DB0 /* NSObject+YQCoder.m in Sources */,
 				4AFD500E1EA22AAD0025B5FE /* YQValue.m in Sources */,

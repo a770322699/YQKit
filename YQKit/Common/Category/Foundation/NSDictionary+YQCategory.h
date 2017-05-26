@@ -80,6 +80,9 @@
 
 - (CGRect)yq_rectForKey:(id)key;
 
+- (id)yq_objectOrNilForKey:(NSString *)key;
+- (id)yq_objectOrNileForKeyPath:(NSString *)keyPath;
+
 @end
 
 @interface NSMutableDictionary (YQCategory)

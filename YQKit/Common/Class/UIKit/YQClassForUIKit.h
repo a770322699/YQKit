@@ -17,6 +17,7 @@
 
 #import "YQCombinationView.h"
 #import "YQImageTextView.h"
+#import "YQMultiCombinationView.h"
 
 #import "YQNotificationView.h"
 
