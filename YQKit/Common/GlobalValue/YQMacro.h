@@ -26,6 +26,9 @@
 #define YQImage(imageName)    [UIImage imageNamed:[NSString stringWithFormat:@"%@", imageName]]
 #define YQRenderingOriginalImage(imageName) [YQImage(imageName) imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
 
+//字体
+#define YQFont(font) [UIFont systemFontOfSize:font]
+
 // 设置视图圆角
 #define YQViewBorderRadius(View, Radius, Width, Color)\
 [View.layer setCornerRadius:(Radius)];\
