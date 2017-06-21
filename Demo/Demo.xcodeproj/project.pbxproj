@@ -31,6 +31,7 @@
 		D865AB751E02BF0100101AA5 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D865AB741E02BF0100101AA5 /* bg@2x.png */; };
 		D88D3E001DEEAB330099DB2D /* YQNetworkingResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D88D3DFF1DEEAB330099DB2D /* YQNetworkingResult.m */; };
 		D88D3E031DEEB8530099DB2D /* YQNetworkingManager+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = D88D3E021DEEB8530099DB2D /* YQNetworkingManager+Create.m */; };
+		D892F7E91EFA1A1500E7B685 /* YQBuildingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D892F7E81EFA1A1500E7B685 /* YQBuildingManager.m */; };
 		D8C9657B1ED7D48A0028B11B /* YQMultiCombinationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C9657A1ED7D48A0028B11B /* YQMultiCombinationView.m */; };
 		D8CD0CB81DF001C900641E05 /* YQNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0CB71DF001C900641E05 /* YQNetworkingManager.m */; };
 		D8CD0CBE1DF0088100641E05 /* YQUploadNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0CBD1DF0088000641E05 /* YQUploadNetworkingManager.m */; };
@@ -115,6 +116,9 @@
 		D88D3DFF1DEEAB330099DB2D /* YQNetworkingResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNetworkingResult.m; sourceTree = "<group>"; };
 		D88D3E011DEEB8530099DB2D /* YQNetworkingManager+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YQNetworkingManager+Create.h"; sourceTree = "<group>"; };
 		D88D3E021DEEB8530099DB2D /* YQNetworkingManager+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YQNetworkingManager+Create.m"; sourceTree = "<group>"; };
+		D892F7E71EFA1A1500E7B685 /* YQBuildingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQBuildingManager.h; sourceTree = "<group>"; };
+		D892F7E81EFA1A1500E7B685 /* YQBuildingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQBuildingManager.m; sourceTree = "<group>"; };
+		D892F7EA1EFA1BDE00E7B685 /* YQClassForOther.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YQClassForOther.h; sourceTree = "<group>"; };
 		D8C965791ED7D48A0028B11B /* YQMultiCombinationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQMultiCombinationView.h; sourceTree = "<group>"; };
 		D8C9657A1ED7D48A0028B11B /* YQMultiCombinationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQMultiCombinationView.m; sourceTree = "<group>"; };
 		D8CD0CB61DF001C900641E05 /* YQNetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQNetworkingManager.h; sourceTree = "<group>"; };
@@ -332,8 +336,10 @@
 		D837310D1E0A2EA000158CE7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				D892F7E61EFA19EC00E7B685 /* Building */,
 				D853DCFF1EA5E57D003EBC87 /* KeyboardServer */,
 				D837310E1E0A2EA000158CE7 /* AuthorityManage */,
+				D892F7EA1EFA1BDE00E7B685 /* YQClassForOther.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -375,6 +381,15 @@
 				D88D3DFF1DEEAB330099DB2D /* YQNetworkingResult.m */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		D892F7E61EFA19EC00E7B685 /* Building */ = {
+			isa = PBXGroup;
+			children = (
+				D892F7E71EFA1A1500E7B685 /* YQBuildingManager.h */,
+				D892F7E81EFA1A1500E7B685 /* YQBuildingManager.m */,
+			);
+			path = Building;
 			sourceTree = "<group>";
 		};
 		D8D151DA1DDD83BD000F2DB0 /* YQKit */ = {
@@ -680,6 +695,7 @@
 			files = (
 				D8D152281DDD83BD000F2DB0 /* UILabel+YQCategory.m in Sources */,
 				D8D152211DDD83BD000F2DB0 /* NSString+YQRegular.m in Sources */,
+				D892F7E91EFA1A1500E7B685 /* YQBuildingManager.m in Sources */,
 				D8D6FE3C1E150576003BB3A3 /* NSManagedObjectContext+YQModelStore.m in Sources */,
 				D8D152291DDD83BD000F2DB0 /* UIScrollView+YQCategory.m in Sources */,
 				D8D1521D1DDD83BD000F2DB0 /* NSData+YQCategory.m in Sources */,

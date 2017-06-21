@@ -11,6 +11,6 @@
 
 #import "YQClassForUIKit.h"
 #import "YQClassForFoundation.h"
-#import "YQAuthorityManager.h"
+#import "YQClassForOther.h"
 
 #endif /* YQClass_h */
