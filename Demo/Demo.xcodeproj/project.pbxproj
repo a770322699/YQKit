@@ -64,6 +64,7 @@
 		D8D6FE3B1E150576003BB3A3 /* NSManagedObject+YQModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6FE351E150576003BB3A3 /* NSManagedObject+YQModelStore.m */; };
 		D8D6FE3C1E150576003BB3A3 /* NSManagedObjectContext+YQModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6FE371E150576003BB3A3 /* NSManagedObjectContext+YQModelStore.m */; };
 		D8D6FE3D1E150576003BB3A3 /* YQModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6FE391E150576003BB3A3 /* YQModelStore.m */; };
+		D8FCAACC1F00AF6B000E194E /* NSObject+YQObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FCAACB1F00AF6B000E194E /* NSObject+YQObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -195,6 +196,8 @@
 		D8D6FE371E150576003BB3A3 /* NSManagedObjectContext+YQModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+YQModelStore.m"; sourceTree = "<group>"; };
 		D8D6FE381E150576003BB3A3 /* YQModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQModelStore.h; sourceTree = "<group>"; };
 		D8D6FE391E150576003BB3A3 /* YQModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQModelStore.m; sourceTree = "<group>"; };
+		D8FCAACA1F00AF6B000E194E /* NSObject+YQObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YQObject.h"; sourceTree = "<group>"; };
+		D8FCAACB1F00AF6B000E194E /* NSObject+YQObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YQObject.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,6 +444,8 @@
 				D8D151E91DDD83BD000F2DB0 /* NSString+YQRegular.m */,
 				D8D151EA1DDD83BD000F2DB0 /* NSString+YQURL.h */,
 				D8D151EB1DDD83BD000F2DB0 /* NSString+YQURL.m */,
+				D8FCAACA1F00AF6B000E194E /* NSObject+YQObject.h */,
+				D8FCAACB1F00AF6B000E194E /* NSObject+YQObject.m */,
 				D8D151EC1DDD83BD000F2DB0 /* YQCategoryForFoundation.h */,
 			);
 			path = Foundation;
@@ -723,6 +728,7 @@
 				D8D1521F1DDD83BD000F2DB0 /* NSObject+YQCoder.m in Sources */,
 				4AFD500E1EA22AAD0025B5FE /* YQValue.m in Sources */,
 				D8CD0CCA1DF118F200641E05 /* AFHTTPSessionManager+Download.m in Sources */,
+				D8FCAACC1F00AF6B000E194E /* NSObject+YQObject.m in Sources */,
 				D8D1521C1DDD83BD000F2DB0 /* NSArray+YQCategory.m in Sources */,
 				D806E6981DCC761C000B8F98 /* main.m in Sources */,
 				D8D152241DDD83BD000F2DB0 /* UIButton+YQCategory.m in Sources */,

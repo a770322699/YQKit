@@ -15,8 +15,12 @@
 @property (nonatomic, strong) UIView *leadingView;  // 前面的视图，上面的或者左边的
 @property (nonatomic, strong) UIView *trailingView;  // 后面的视图, 下面的或者右边的
 
+@property (nonatomic, strong) YQIntrinsicContentSizeView *contentView;
+
 @property (nonatomic, strong) MASConstraint *spaceConstraint;
 @property (nonatomic, strong) NSMutableArray<MASConstraint *> *constraints;  // 所有的约束
+
+@property (nonatomic, strong) MASConstraint *contentInsetConstraint;
 
 @end
 
@@ -39,13 +43,18 @@
 - (instancetype)initWithLeadingView:(UIView *)leading trailingView:(UIView *)trailing{
     if (self = [super initWithFrame:CGRectZero]) {
         
+        [self addSubview:self.contentView];
+        [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+            self.contentInsetConstraint = make.edges.mas_equalTo(self.contentInset);
+        }];
+        
         _constraints = [NSMutableArray array];
         
         _leadingView = leading;
-        [self addSubview:leading];
+        [self.contentView addSubview:leading];
         
         _trailingView = trailing;
-        [self addSubview:trailing];
+        [self.contentView addSubview:trailing];
         
         // 更新约束
         [self updateCustomConstraint];
@@ -58,7 +67,21 @@
     return self;
 }
 
+#pragma mark - getter
+- (YQIntrinsicContentSizeView *)contentView{
+    if (!_contentView) {
+        _contentView = [[YQIntrinsicContentSizeView alloc] init];
+    }
+    return _contentView;
+}
+
 #pragma mark - setting
+- (void)setContentInset:(UIEdgeInsets)contentInset{
+    _contentInset = contentInset;
+    
+    [self.contentInsetConstraint setInsets:contentInset];
+}
+
 - (void)setPattern:(YQCombinationViewPattern)pattern{
     if (_pattern != pattern) {
         _pattern = pattern;

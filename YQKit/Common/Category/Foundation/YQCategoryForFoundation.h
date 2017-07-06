@@ -9,6 +9,7 @@
 #ifndef YQCategoryForFoundation_h
 #define YQCategoryForFoundation_h
 
+#import "NSObject+YQObject.h"
 #import "NSObject+YQCoder.h"
 #import "NSArray+YQCategory.h"
 #import "NSDictionary+YQCategory.h"

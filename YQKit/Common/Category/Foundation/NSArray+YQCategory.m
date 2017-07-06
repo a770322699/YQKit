@@ -69,6 +69,29 @@
     return [self yq_arrayWithPlistData:data];
 }
 
+// 从多个数组创建一个数组
++ (instancetype)yq_arrayWithArrays:(NSArray *)firstArray, ...{
+    NSMutableArray *resultArrays = [NSMutableArray array];
+    
+    va_list argList;
+    
+    if (firstArray) {
+        [resultArrays addObjectsFromArray:firstArray];
+        
+        va_start(argList, firstArray);
+        
+        id temp;
+        
+        while ((temp = va_arg(argList, NSArray *))) {
+            [resultArrays addObjectsFromArray:temp];
+        }
+    }
+    
+    va_end(argList);
+    
+    return resultArrays.count ? resultArrays : nil;
+}
+
 - (NSData *)yq_plistData {
     return [NSPropertyListSerialization dataWithPropertyList:self format:NSPropertyListBinaryFormat_v1_0 options:kNilOptions error:NULL];
 }

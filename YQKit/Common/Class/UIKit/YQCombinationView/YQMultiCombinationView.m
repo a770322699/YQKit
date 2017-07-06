@@ -187,6 +187,56 @@ static const char *kRuntimeSaveKey_yq_multiCombinationViewNextConstraint = "kRun
                     }];
                 }
             }
+        }else{  // 若果现在显示
+            if (self.pattern == YQMultiCombinationViewPattern_horizontal) {
+                if (befor) {
+                    [befor.yq_multiCombinationViewNextConstraint uninstall];
+                    [current mas_makeConstraints:^(MASConstraintMaker *make) {
+                        befor.yq_multiCombinationViewNextConstraint = make.leading.mas_equalTo(befor.mas_trailing).offset(self.space);
+                        self.yq_multiCombinationViewBeforConstraint = befor.yq_multiCombinationViewNextConstraint;
+                    }];
+                }else{
+                    [current mas_makeConstraints:^(MASConstraintMaker *make) {
+                        current.yq_multiCombinationViewBeforConstraint = make.leading.mas_equalTo(@0);
+                    }];
+                }
+                
+                if (next) {
+                    [next.yq_multiCombinationViewBeforConstraint uninstall];
+                    [next mas_makeConstraints:^(MASConstraintMaker *make) {
+                        next.yq_multiCombinationViewBeforConstraint = make.leading.mas_equalTo(current.mas_trailing).offset(self.space);
+                        current.yq_multiCombinationViewNextConstraint = next.yq_multiCombinationViewBeforConstraint;
+                    }];
+                }else{
+                    [current mas_makeConstraints:^(MASConstraintMaker *make) {
+                        current.yq_multiCombinationViewNextConstraint = make.trailing.mas_equalTo(@0);
+                    }];
+                }
+            }else{
+                if (befor) {
+                    [befor.yq_multiCombinationViewNextConstraint uninstall];
+                    [current mas_makeConstraints:^(MASConstraintMaker *make) {
+                        befor.yq_multiCombinationViewNextConstraint = make.top.mas_equalTo(befor.mas_bottom).offset(self.space);
+                        self.yq_multiCombinationViewBeforConstraint = befor.yq_multiCombinationViewNextConstraint;
+                    }];
+                }else{
+                    [current mas_makeConstraints:^(MASConstraintMaker *make) {
+                        current.yq_multiCombinationViewBeforConstraint = make.top.mas_equalTo(@0);
+                    }];
+                }
+                
+                if (next) {
+                    [next.yq_multiCombinationViewBeforConstraint uninstall];
+                    [next mas_makeConstraints:^(MASConstraintMaker *make) {
+                        next.yq_multiCombinationViewBeforConstraint = make.top.mas_equalTo(current.mas_bottom).offset(self.space);
+                        current.yq_multiCombinationViewNextConstraint = next.yq_multiCombinationViewBeforConstraint;
+                    }];
+                }else{
+                    [current mas_makeConstraints:^(MASConstraintMaker *make) {
+                        current.yq_multiCombinationViewNextConstraint = make.bottom.mas_equalTo(@0);
+                    }];
+                }
+            }
         }
     }
 }

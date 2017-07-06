@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, YQCombinationViewIntrinsicPriority) {
 @property (nonatomic, assign) YQCombinationViewIntrinsicPriority viewPriority; // 默认：YQCombinationViewIntrinsicPriority
 
 @property (nonatomic, assign) CGFloat space; // 两个视图之间的间距, 默认为0
+@property (nonatomic, assign) UIEdgeInsets contentInset; // <#annotation#>
 
 @property (nonatomic, readonly) UIView *leadingView;  // 前面的视图，上面的或者左边的
 @property (nonatomic, readonly) UIView *trailingView;  // 后面的视图, 下面的或者右边的
