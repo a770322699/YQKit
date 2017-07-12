@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIL-fC-A9A">
-                                <frame key="frameInset" minX="121" minY="480" width="133" height="50"/>
+                                <rect key="frame" x="121" y="480" width="133" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.58396470410000001" green="1" blue="0.30196075239999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
@@ -27,10 +30,24 @@
                                     <action selector="timeCtrl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aga-3H-9my"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0p4-V9-QDU">
+                                <rect key="frame" x="67" y="28" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xhx-Nl-gJ3">
+                                <rect key="frame" x="67" y="225" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0p4-V9-QDU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="7a4-XI-jgv"/>
+                            <constraint firstItem="0p4-V9-QDU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RIP-HO-Eu1"/>
+                            <constraint firstItem="xhx-Nl-gJ3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="euW-8P-RVl"/>
+                            <constraint firstItem="xhx-Nl-gJ3" firstAttribute="top" secondItem="0p4-V9-QDU" secondAttribute="bottom" constant="40" id="jXF-hw-gdk"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView1" destination="0p4-V9-QDU" id="dKh-2M-Fir"/>
+                        <outlet property="imageView2" destination="xhx-Nl-gJ3" id="VpU-hy-egQ"/>
                         <outlet property="timeButton" destination="vIL-fC-A9A" id="lf5-3c-50p"/>
                     </connections>
                 </viewController>

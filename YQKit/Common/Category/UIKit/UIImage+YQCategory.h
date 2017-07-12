@@ -51,6 +51,16 @@
 
 /** 取出(挖取)图片的指定区域 */
 - (UIImage *)yq_imageAtRect:(CGRect)rect;
+
+// 获取圆角图片
+- (UIImage *)yq_circleImageWithRadius:(CGFloat)radius;
+// 获取圆形图片
+- (UIImage *)yq_circleImage;
+// 获取圆角图片
+- (UIImage *)yq_circleImageWithRadius:(CGFloat)radius size:(CGSize)size;
+// 获取圆形图片
+- (UIImage *)yq_circleImageWithSize:(CGSize)size;
+
 //主色调;
 - (UIColor *)yq_mostColor;
 //颜色均值AverageColor

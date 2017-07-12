@@ -58,14 +58,14 @@ static NSString * const kDownloadNetworkBaseURL = @"http://192.168.2.178:8092";
 }
 
 #pragma mark - override public
-- (void)startWithProgress:(void(^)(NSProgress *progress))progress completion:(void(^)(YQNetworkingResult *result))completion{
+- (void)start{
     // 如果url为空，直接返回
     if (self.URLString.length == 0) {
-        if (completion) {
+        if (self.completion) {
             YQNetworkingResult *result = [[YQNetworkingResult alloc] init];
             NSError *error = [NSError errorWithDomain:@"请求的url为空" code:0 userInfo:nil];
             result.error = error;
-            completion(result);
+            self.completion(result);
         }
         return;
     }
@@ -83,8 +83,8 @@ static NSString * const kDownloadNetworkBaseURL = @"http://192.168.2.178:8092";
     }
     
     // 开始下载数据
-    [self.sessionManager yq_downloadData:self.URLString parameters:self.parameters destination:self.path progress:progress completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nonnull filePath, NSError * _Nonnull error) {
-        if (completion) {
+    [self.sessionManager yq_downloadData:self.URLString parameters:self.parameters destination:self.path progress:self.progress completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nonnull filePath, NSError * _Nonnull error) {
+        if (self.completion) {
             YQNetworkingResult *result = [[YQNetworkingResult alloc] init];
             result.URL = response.URL.absoluteString;
             if (response.URL.query.length == 0) {
@@ -107,7 +107,7 @@ static NSString * const kDownloadNetworkBaseURL = @"http://192.168.2.178:8092";
                 // ......
             }
             
-            completion(result);
+            self.completion(result);
         }
         
         // 断开网络连接

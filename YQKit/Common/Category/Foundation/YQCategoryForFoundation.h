@@ -15,6 +15,6 @@
 #import "NSDictionary+YQCategory.h"
 #import "NSString+YQCategory.h"
 #import "NSString+YQURL.h"
-#import "NSData+YQCategory.h"
+#import "NSDate+YQCategory.h"
 
 #endif /* YQCategoryForFoundation_h */

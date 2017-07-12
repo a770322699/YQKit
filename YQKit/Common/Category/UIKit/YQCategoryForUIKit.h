@@ -27,5 +27,6 @@
 #import "UIScrollView+YQScaleHeader.h"
 #import "UIAlertController+YQCategory.h"
 #import "UIScrollView+YQEmptyDataSet.h"
+#import "UIView+YQAnimation.h"
 
 #endif /* YQCategoryForUIKit_h */

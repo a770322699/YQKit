@@ -28,6 +28,10 @@
 
 @property (nonatomic, strong) YQTestModelView *modelView;
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView1;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView2;
+
 @end
 
 @implementation ViewController
@@ -68,6 +72,11 @@
 //    [self.view addSubview:tableView];
     
     self.modelView = [[YQTestModelView alloc] init];
+    
+    self.imageView1.image = [YQImage(@"image.jpg") yq_circleImageWithSize:CGSizeMake(200, 200)];
+    self.imageView2.image = [YQImage(@"image.jpg") yq_circleImageWithRadius:50 size:CGSizeMake(200, 200)];
+    
+    [self.imageView2 yq_shakeStart];
 }
 
 

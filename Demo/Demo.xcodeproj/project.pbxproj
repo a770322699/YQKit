@@ -27,6 +27,11 @@
 		D83731111E0A2EC900158CE7 /* YQAuthorityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D83731101E0A2EC900158CE7 /* YQAuthorityManager.m */; };
 		D853DACD1EA5AA7A003EBC87 /* UIScrollView+YQEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D853DACC1EA5AA7A003EBC87 /* UIScrollView+YQEmptyDataSet.m */; };
 		D853DD021EA5E58E003EBC87 /* YQKeyboardServer.m in Sources */ = {isa = PBXBuildFile; fileRef = D853DD011EA5E58E003EBC87 /* YQKeyboardServer.m */; };
+		D85A896F1F14AB16006A143E /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D85A896E1F14AB16006A143E /* image.jpg */; };
+		D85A89761F14D05B006A143E /* UIView+YQAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A89751F14D05B006A143E /* UIView+YQAnimation.m */; };
+		D85A89791F15ACEC006A143E /* NSDate+YQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A89781F15ACEC006A143E /* NSDate+YQCategory.m */; };
+		D85A897C1F15ADB1006A143E /* NSData+YQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A897B1F15ADB1006A143E /* NSData+YQCategory.m */; };
+		D85A897F1F15BEBD006A143E /* YQNetworkingTaskGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A897E1F15BEBD006A143E /* YQNetworkingTaskGroup.m */; };
 		D865AB731E029CF400101AA5 /* UIScrollView+YQScaleHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D865AB721E029CF400101AA5 /* UIScrollView+YQScaleHeader.m */; };
 		D865AB751E02BF0100101AA5 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D865AB741E02BF0100101AA5 /* bg@2x.png */; };
 		D88D3E001DEEAB330099DB2D /* YQNetworkingResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D88D3DFF1DEEAB330099DB2D /* YQNetworkingResult.m */; };
@@ -40,7 +45,6 @@
 		D8CD0CCA1DF118F200641E05 /* AFHTTPSessionManager+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CD0CC91DF118F200641E05 /* AFHTTPSessionManager+Download.m */; };
 		D8CD0CCC1DF161FD00641E05 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8CD0CCB1DF161FD00641E05 /* image1.jpg */; };
 		D8D1521C1DDD83BD000F2DB0 /* NSArray+YQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D151DF1DDD83BD000F2DB0 /* NSArray+YQCategory.m */; };
-		D8D1521D1DDD83BD000F2DB0 /* NSData+YQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D151E11DDD83BD000F2DB0 /* NSData+YQCategory.m */; };
 		D8D1521E1DDD83BD000F2DB0 /* NSDictionary+YQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D151E31DDD83BD000F2DB0 /* NSDictionary+YQCategory.m */; };
 		D8D1521F1DDD83BD000F2DB0 /* NSObject+YQCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D151E51DDD83BD000F2DB0 /* NSObject+YQCoder.m */; };
 		D8D152201DDD83BD000F2DB0 /* NSString+YQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D151E71DDD83BD000F2DB0 /* NSString+YQCategory.m */; };
@@ -110,6 +114,16 @@
 		D853DACC1EA5AA7A003EBC87 /* UIScrollView+YQEmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YQEmptyDataSet.m"; sourceTree = "<group>"; };
 		D853DD001EA5E58E003EBC87 /* YQKeyboardServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQKeyboardServer.h; sourceTree = "<group>"; };
 		D853DD011EA5E58E003EBC87 /* YQKeyboardServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQKeyboardServer.m; sourceTree = "<group>"; };
+		D85A896E1F14AB16006A143E /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		D85A89731F14BEDA006A143E /* YQSettingURLConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YQSettingURLConst.h; sourceTree = "<group>"; };
+		D85A89741F14D05B006A143E /* UIView+YQAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YQAnimation.h"; sourceTree = "<group>"; };
+		D85A89751F14D05B006A143E /* UIView+YQAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YQAnimation.m"; sourceTree = "<group>"; };
+		D85A89771F15ACEC006A143E /* NSDate+YQCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YQCategory.h"; sourceTree = "<group>"; };
+		D85A89781F15ACEC006A143E /* NSDate+YQCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YQCategory.m"; sourceTree = "<group>"; };
+		D85A897A1F15ADB1006A143E /* NSData+YQCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+YQCategory.h"; sourceTree = "<group>"; };
+		D85A897B1F15ADB1006A143E /* NSData+YQCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+YQCategory.m"; sourceTree = "<group>"; };
+		D85A897D1F15BEBD006A143E /* YQNetworkingTaskGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQNetworkingTaskGroup.h; sourceTree = "<group>"; };
+		D85A897E1F15BEBD006A143E /* YQNetworkingTaskGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNetworkingTaskGroup.m; sourceTree = "<group>"; };
 		D865AB711E029CF400101AA5 /* UIScrollView+YQScaleHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YQScaleHeader.h"; sourceTree = "<group>"; };
 		D865AB721E029CF400101AA5 /* UIScrollView+YQScaleHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YQScaleHeader.m"; sourceTree = "<group>"; };
 		D865AB741E02BF0100101AA5 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
@@ -135,8 +149,6 @@
 		D8CD0CCB1DF161FD00641E05 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
 		D8D151DE1DDD83BD000F2DB0 /* NSArray+YQCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YQCategory.h"; sourceTree = "<group>"; };
 		D8D151DF1DDD83BD000F2DB0 /* NSArray+YQCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YQCategory.m"; sourceTree = "<group>"; };
-		D8D151E01DDD83BD000F2DB0 /* NSData+YQCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+YQCategory.h"; sourceTree = "<group>"; };
-		D8D151E11DDD83BD000F2DB0 /* NSData+YQCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+YQCategory.m"; sourceTree = "<group>"; };
 		D8D151E21DDD83BD000F2DB0 /* NSDictionary+YQCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YQCategory.h"; sourceTree = "<group>"; };
 		D8D151E31DDD83BD000F2DB0 /* NSDictionary+YQCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YQCategory.m"; sourceTree = "<group>"; };
 		D8D151E41DDD83BD000F2DB0 /* NSObject+YQCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YQCoder.h"; sourceTree = "<group>"; };
@@ -262,6 +274,7 @@
 			children = (
 				D865AB741E02BF0100101AA5 /* bg@2x.png */,
 				D8CD0CCB1DF161FD00641E05 /* image1.jpg */,
+				D85A896E1F14AB16006A143E /* image.jpg */,
 				D806E6991DCC761C000B8F98 /* AppDelegate.h */,
 				D806E69A1DCC761C000B8F98 /* AppDelegate.m */,
 				D806E69C1DCC761C000B8F98 /* ViewController.h */,
@@ -382,6 +395,8 @@
 				D88D3E021DEEB8530099DB2D /* YQNetworkingManager+Create.m */,
 				D88D3DFE1DEEAB330099DB2D /* YQNetworkingResult.h */,
 				D88D3DFF1DEEAB330099DB2D /* YQNetworkingResult.m */,
+				D85A897D1F15BEBD006A143E /* YQNetworkingTaskGroup.h */,
+				D85A897E1F15BEBD006A143E /* YQNetworkingTaskGroup.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -432,8 +447,10 @@
 			children = (
 				D8D151DE1DDD83BD000F2DB0 /* NSArray+YQCategory.h */,
 				D8D151DF1DDD83BD000F2DB0 /* NSArray+YQCategory.m */,
-				D8D151E01DDD83BD000F2DB0 /* NSData+YQCategory.h */,
-				D8D151E11DDD83BD000F2DB0 /* NSData+YQCategory.m */,
+				D85A89771F15ACEC006A143E /* NSDate+YQCategory.h */,
+				D85A89781F15ACEC006A143E /* NSDate+YQCategory.m */,
+				D85A897A1F15ADB1006A143E /* NSData+YQCategory.h */,
+				D85A897B1F15ADB1006A143E /* NSData+YQCategory.m */,
 				D8D151E21DDD83BD000F2DB0 /* NSDictionary+YQCategory.h */,
 				D8D151E31DDD83BD000F2DB0 /* NSDictionary+YQCategory.m */,
 				D8D151E41DDD83BD000F2DB0 /* NSObject+YQCoder.h */,
@@ -486,6 +503,8 @@
 				D83731081E090C6500158CE7 /* UIAlertController+YQCategory.m */,
 				D853DACB1EA5AA7A003EBC87 /* UIScrollView+YQEmptyDataSet.h */,
 				D853DACC1EA5AA7A003EBC87 /* UIScrollView+YQEmptyDataSet.m */,
+				D85A89741F14D05B006A143E /* UIView+YQAnimation.h */,
+				D85A89751F14D05B006A143E /* UIView+YQAnimation.m */,
 				D8D152091DDD83BD000F2DB0 /* YQCategoryForUIKit.h */,
 			);
 			path = UIKit;
@@ -522,6 +541,7 @@
 				D8D152141DDD83BD000F2DB0 /* README.md */,
 				D8D152151DDD83BD000F2DB0 /* YQConst.h */,
 				D8122A361E8B856200AD5BA3 /* YQCorlorConst.h */,
+				D85A89731F14BEDA006A143E /* YQSettingURLConst.h */,
 				D8D152161DDD83BD000F2DB0 /* YQFunction.h */,
 				D8D152171DDD83BD000F2DB0 /* YQFunction.m */,
 				D8D152181DDD83BD000F2DB0 /* YQGlobalValue.h */,
@@ -640,6 +660,7 @@
 				D806E6A31DCC761C000B8F98 /* Assets.xcassets in Resources */,
 				D806E6A11DCC761C000B8F98 /* Main.storyboard in Resources */,
 				D865AB751E02BF0100101AA5 /* bg@2x.png in Resources */,
+				D85A896F1F14AB16006A143E /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,12 +724,12 @@
 				D892F7E91EFA1A1500E7B685 /* YQBuildingManager.m in Sources */,
 				D8D6FE3C1E150576003BB3A3 /* NSManagedObjectContext+YQModelStore.m in Sources */,
 				D8D152291DDD83BD000F2DB0 /* UIScrollView+YQCategory.m in Sources */,
-				D8D1521D1DDD83BD000F2DB0 /* NSData+YQCategory.m in Sources */,
 				D8D152251DDD83BD000F2DB0 /* UICollectionViewCell+YQProperty.m in Sources */,
 				D853DACD1EA5AA7A003EBC87 /* UIScrollView+YQEmptyDataSet.m in Sources */,
 				D83731051E090B5B00158CE7 /* YQIntrinsicContentSizeView.m in Sources */,
 				D83731091E090C6500158CE7 /* UIAlertController+YQCategory.m in Sources */,
 				D88D3E031DEEB8530099DB2D /* YQNetworkingManager+Create.m in Sources */,
+				D85A897F1F15BEBD006A143E /* YQNetworkingTaskGroup.m in Sources */,
 				D8D1522D1DDD83BD000F2DB0 /* UIView+YQFrame.m in Sources */,
 				D83731111E0A2EC900158CE7 /* YQAuthorityManager.m in Sources */,
 				D8D152261DDD83BD000F2DB0 /* UIColor+YQCategory.m in Sources */,
@@ -720,6 +741,7 @@
 				D865AB731E029CF400101AA5 /* UIScrollView+YQScaleHeader.m in Sources */,
 				D81229D91E88C27B00AD5BA3 /* YQCombinationView.m in Sources */,
 				D8CD0CC41DF008B100641E05 /* YQDownloadNetworkingManager.m in Sources */,
+				D85A89791F15ACEC006A143E /* NSDate+YQCategory.m in Sources */,
 				D81894741E15F60D00283E30 /* YQModalView.m in Sources */,
 				D81229D51E88BEA200AD5BA3 /* YQMarginLabel.m in Sources */,
 				D8CD0CB81DF001C900641E05 /* YQNetworkingManager.m in Sources */,
@@ -738,6 +760,7 @@
 				D8D152341DDD83BD000F2DB0 /* YQFunction.m in Sources */,
 				D8CD0CBE1DF0088100641E05 /* YQUploadNetworkingManager.m in Sources */,
 				D8D1522A1DDD83BD000F2DB0 /* UISearchBar+YQCategory.m in Sources */,
+				D85A897C1F15ADB1006A143E /* NSData+YQCategory.m in Sources */,
 				D8D6FE3B1E150576003BB3A3 /* NSManagedObject+YQModelStore.m in Sources */,
 				D88D3E001DEEAB330099DB2D /* YQNetworkingResult.m in Sources */,
 				D8CD0CC11DF0089A00641E05 /* YQDataNetworkingManager.m in Sources */,
@@ -749,6 +772,7 @@
 				D81894771E163F3C00283E30 /* YQTestModelView.m in Sources */,
 				D81229D21E88BB6400AD5BA3 /* YQMarginView.m in Sources */,
 				D8D6FE3A1E150576003BB3A3 /* YQCoderObject.m in Sources */,
+				D85A89761F14D05B006A143E /* UIView+YQAnimation.m in Sources */,
 				D81229DC1E88E70C00AD5BA3 /* YQImageTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
