@@ -32,6 +32,7 @@
 		D85A89791F15ACEC006A143E /* NSDate+YQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A89781F15ACEC006A143E /* NSDate+YQCategory.m */; };
 		D85A897C1F15ADB1006A143E /* NSData+YQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A897B1F15ADB1006A143E /* NSData+YQCategory.m */; };
 		D85A897F1F15BEBD006A143E /* YQNetworkingTaskGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A897E1F15BEBD006A143E /* YQNetworkingTaskGroup.m */; };
+		D85A89D01F176731006A143E /* UITableView+YQCardGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D85A89CF1F176731006A143E /* UITableView+YQCardGroup.m */; };
 		D865AB731E029CF400101AA5 /* UIScrollView+YQScaleHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D865AB721E029CF400101AA5 /* UIScrollView+YQScaleHeader.m */; };
 		D865AB751E02BF0100101AA5 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D865AB741E02BF0100101AA5 /* bg@2x.png */; };
 		D88D3E001DEEAB330099DB2D /* YQNetworkingResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D88D3DFF1DEEAB330099DB2D /* YQNetworkingResult.m */; };
@@ -124,6 +125,8 @@
 		D85A897B1F15ADB1006A143E /* NSData+YQCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+YQCategory.m"; sourceTree = "<group>"; };
 		D85A897D1F15BEBD006A143E /* YQNetworkingTaskGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQNetworkingTaskGroup.h; sourceTree = "<group>"; };
 		D85A897E1F15BEBD006A143E /* YQNetworkingTaskGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNetworkingTaskGroup.m; sourceTree = "<group>"; };
+		D85A89CE1F176731006A143E /* UITableView+YQCardGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+YQCardGroup.h"; sourceTree = "<group>"; };
+		D85A89CF1F176731006A143E /* UITableView+YQCardGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+YQCardGroup.m"; sourceTree = "<group>"; };
 		D865AB711E029CF400101AA5 /* UIScrollView+YQScaleHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YQScaleHeader.h"; sourceTree = "<group>"; };
 		D865AB721E029CF400101AA5 /* UIScrollView+YQScaleHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YQScaleHeader.m"; sourceTree = "<group>"; };
 		D865AB741E02BF0100101AA5 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
@@ -503,6 +506,8 @@
 				D83731081E090C6500158CE7 /* UIAlertController+YQCategory.m */,
 				D853DACB1EA5AA7A003EBC87 /* UIScrollView+YQEmptyDataSet.h */,
 				D853DACC1EA5AA7A003EBC87 /* UIScrollView+YQEmptyDataSet.m */,
+				D85A89CE1F176731006A143E /* UITableView+YQCardGroup.h */,
+				D85A89CF1F176731006A143E /* UITableView+YQCardGroup.m */,
 				D85A89741F14D05B006A143E /* UIView+YQAnimation.h */,
 				D85A89751F14D05B006A143E /* UIView+YQAnimation.m */,
 				D8D152091DDD83BD000F2DB0 /* YQCategoryForUIKit.h */,
@@ -752,6 +757,7 @@
 				D8CD0CCA1DF118F200641E05 /* AFHTTPSessionManager+Download.m in Sources */,
 				D8FCAACC1F00AF6B000E194E /* NSObject+YQObject.m in Sources */,
 				D8D1521C1DDD83BD000F2DB0 /* NSArray+YQCategory.m in Sources */,
+				D85A89D01F176731006A143E /* UITableView+YQCardGroup.m in Sources */,
 				D806E6981DCC761C000B8F98 /* main.m in Sources */,
 				D8D152241DDD83BD000F2DB0 /* UIButton+YQCategory.m in Sources */,
 				D853DD021EA5E58E003EBC87 /* YQKeyboardServer.m in Sources */,
