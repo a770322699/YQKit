@@ -20,4 +20,7 @@
 
 @property (nonatomic, weak) id<YQCardGroupDataSource> yq_cardGroupDataSource;
 
+- (UIView *)yq_dequeueReusableGroupCardViewWithIdentifier:(NSString *)reuseIdentifier section:(NSInteger)section;
+- (void)yq_registerClass:(Class)viewClass forGroupCardViewReuseIdentifier:(NSString *)reuseIdentifier;
+
 @end

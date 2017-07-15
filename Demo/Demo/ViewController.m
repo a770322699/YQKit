@@ -20,7 +20,7 @@
 
 #import "YQTestModelView.h"
 
-@interface ViewController ()<YQViewSidelineDataSource, UITableViewDelegate, UITableViewDataSource>
+@interface ViewController ()<YQViewSidelineDataSource, UITableViewDelegate, UITableViewDataSource, YQCardGroupDataSource>
 
 @property (weak, nonatomic) IBOutlet UIButton *timeButton;
 @property (nonatomic, strong) dispatch_source_t timer;
@@ -77,6 +77,27 @@
     self.imageView2.image = [YQImage(@"image.jpg") yq_circleImageWithRadius:50 size:CGSizeMake(200, 200)];
     
     [self.imageView2 yq_shakeStart];
+
+    
+    unsigned int outCount = 0;
+    Ivar *ivars = class_copyIvarList([UITableView class], &outCount);
+    for (int i = 0; i < outCount; i++) {
+        Ivar ivar = ivars[i];
+        NSString *name = [[NSString alloc] initWithUTF8String:ivar_getName(ivar)];
+        NSLog(@"%@", name);
+    }
+    
+    free(ivars);
+    
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.yq_cardGroupDataSource = self;
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    tableView.tableFooterView = [UIView new];
+    [tableView yq_registerClass:[UIView class] forGroupCardViewReuseIdentifier:@"id"];
+    [self.view addSubview:tableView];
 }
 
 
@@ -197,8 +218,16 @@
     
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 40;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -207,8 +236,44 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identitiy];
         cell.textLabel.text = @"测试";
+        cell.backgroundColor = kYQColorClear;
+        cell.contentView.backgroundColor = kYQColorClear;
     }
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView cardViewForSection:(NSInteger)section{
+    UIView *view = [tableView yq_dequeueReusableGroupCardViewWithIdentifier:@"id" section:section];
+    if (view.tag != 100) {
+        view.tag = 100;
+        
+        YQViewBorderRadius(view, 5, 0, kYQColorClear);
+    }
+    
+    switch (section) {
+        case 0:
+            view.backgroundColor = kYQColorCyan;
+            break;
+            
+        case 1:
+            view.backgroundColor = kYQColorGreen;
+            break;
+            
+        case 2:
+            view.backgroundColor = kYQColorOrange;
+            break;
+            
+        default:
+            break;
+    }
+    
+    return view;
+}
+- (CGFloat)cardViewLeftMarginForTableView:(UITableView *)tableView{
+    return 30;
+}
+- (CGFloat)cardViewRightMarginForTableView:(UITableView *)tableView{
+    return 30;
 }
 
 @end
