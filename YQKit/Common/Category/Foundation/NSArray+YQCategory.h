@@ -38,6 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)yq_arrayWithPlistString:(NSString *)plist;
 
+// 从多个数组创建一个数组
++ (instancetype)yq_arrayWithArrays:(NSArray *)firstArray, ... NS_REQUIRES_NIL_TERMINATION;
+
 /**
  Serialize the array to a binary property list data.
  

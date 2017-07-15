@@ -19,4 +19,7 @@
 // url 解码
 + (NSString *)yq_stringWithUrlString:(NSString *)urlString;
 
+// 添加参数
+- (NSString *)yq_appendURLParameter:(NSDictionary *)parameter;
+
 @end

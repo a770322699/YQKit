@@ -14,4 +14,7 @@
 - (void)yq_addAttrDict:(NSDictionary *)attrDict toStr:(NSString *)str;
 - (void)yq_addAttrDict:(NSDictionary *)attrDict toRange:(NSRange)range;
 
+// 计算某段文本的frame
+- (CGRect)yq_boundingRectForCharacterRange:(NSRange)range;
+
 @end

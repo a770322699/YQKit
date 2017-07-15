@@ -32,18 +32,25 @@
 }
 
 #pragma mark - public
-- (void)startWithCompletion:(void(^)(YQNetworkingResult *result))completion{
-    [self startWithProgress:nil completion:completion];
-}
-- (void)startWithProgress:(void(^)(NSProgress *progress))progress completion:(void(^)(YQNetworkingResult *result))completion{
-    
+- (void)start{
     YQNetworkingResult *result = [[YQNetworkingResult alloc] init];
     result.error = [NSError errorWithDomain:@"不能直接使用YQNetworkingManager类型的对象发送请求消息，请创建YQNetworkingManager的子类（YQDataNetworkingManager、YQUploadNetworkingManager或者YQDownloadNetworkingManager）类型的对象发送请求！" code:0 userInfo:nil];
-    if (completion) {
-        completion(result);
+    if (self.completion) {
+        self.completion(result);
     }else{
         NSLog(@"%@", result.error.domain);
     }
+}
+
+- (void)startWithCompletion:(void(^)(YQNetworkingResult *result))completion{
+    self.completion = completion;
+    [self start];
+}
+- (void)startWithProgress:(void(^)(NSProgress *progress))progress completion:(void(^)(YQNetworkingResult *result))completion{
+    self.progress = progress;
+    self.completion = completion;
+    
+    [self start];
 }
 
 #pragma mark - protected

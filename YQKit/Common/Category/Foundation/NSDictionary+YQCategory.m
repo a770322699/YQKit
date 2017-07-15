@@ -344,6 +344,33 @@
     return rect;
 }
 
+- (id)yq_objectOrNilForKey:(NSString *)key{
+    if (![self isKindOfClass:[NSDictionary class]]) {
+        return nil;
+    }
+    
+    return [self objectForKey:key];
+}
+
+- (id)yq_objectOrNileForKeyPath:(NSString *)keyPath{
+    NSArray *keys = [keyPath componentsSeparatedByString:@"."];
+    
+    if (keys.count == 0) {
+        return nil;
+    }
+    
+    id value = self;
+    for (NSString *key in keys) {
+        if ([value isKindOfClass:[NSDictionary class]]) {
+            value = [value yq_objectOrNilForKey:key];
+        }else{
+            return nil;
+        }
+    }
+    
+    return value;
+}
+
 @end
 
 @implementation NSMutableDictionary (YQCategory)

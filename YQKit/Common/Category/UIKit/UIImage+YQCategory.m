@@ -395,6 +395,47 @@
     CGImageRelease(imageRef);
     return subImage;
 }
+
+// 获取圆角图片
+- (UIImage *)yq_circleImageWithRadius:(CGFloat)radius{
+    return [self yq_circleImageWithRadius:radius size:self.size];
+}
+
+// 获取圆角图片
+- (UIImage *)yq_circleImageWithRadius:(CGFloat)radius size:(CGSize)size{
+    UIGraphicsBeginImageContextWithOptions(size, NO, 1);
+    CGContextRef contenxt = UIGraphicsGetCurrentContext();
+
+    CGContextAddArc(contenxt, size.width - radius, radius, radius, - M_PI_2, 0, NO);
+    CGContextAddArc(contenxt, size.width - radius, size.height - radius, radius, 0, M_PI_2, NO);
+    CGContextAddArc(contenxt, radius, size.height - radius, radius, M_PI_2, M_PI, NO);
+    CGContextAddArc(contenxt, radius, radius, radius, M_PI, - M_PI_2, NO);
+
+    CGContextClip(contenxt);
+    [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+// 获取圆形图片
+- (UIImage *)yq_circleImage{
+    return [self yq_circleImageWithSize:self.size];
+}
+
+// 获取圆形图片
+- (UIImage *)yq_circleImageWithSize:(CGSize)size{
+    UIGraphicsBeginImageContextWithOptions(size, NO, 1);
+    CGContextRef contenxt = UIGraphicsGetCurrentContext();
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    CGContextAddEllipseInRect(contenxt, rect);
+    CGContextClip(contenxt);
+    [self drawInRect:rect];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 //主色调;
 - (UIColor *)yq_mostColor{
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1
@@ -489,5 +530,20 @@
         
     }
 }
+
+// 获取icon
++ (UIImage *)yq_iconImageWithSize:(CGSize)size{
+    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+    NSArray *iconNames = infoDic[@"CFBundleIcons"][@"CFBundlePrimaryIcon"][@"CFBundleIconFiles"];
+    
+    NSString *sizeString = [NSString stringWithFormat:@"%dx%d", (int)size.width, (int)size.height];
+    for (NSString *iconName in iconNames) {
+        if ([iconName hasSuffix:sizeString]) {
+            return [UIImage imageNamed:iconName];
+        }
+    }
+    return nil;
+}
+
 
 @end

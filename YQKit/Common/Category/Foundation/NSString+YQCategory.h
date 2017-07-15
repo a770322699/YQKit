@@ -16,11 +16,17 @@
 - (NSString *)yq_DESEncryptForKey:(NSString *)key;
 // DES解密
 - (NSString *)yq_DESDecryptForKey:(NSString *)key;
+// base64
+- (NSData *)yq_base64Data;
++ (NSString *)yq_stringWithBase64Data:(NSData *)data;
 
 + (NSString *)yq_stringWithInt:(int)intValue;
 + (NSString *)yq_stringWithInteger:(NSInteger)integerValue;
 + (NSString *)yq_stringWithDoubleValue:(double)value;
 + (NSString *)yq_stringWithDoubleLocate:(double)value;
+
+// 首字母大写
+- (NSString *)yq_uppercaseFirstString;
 
 // 将数组、字典转换成json
 + (NSString *)yq_jsonStringWithObject:(id)object;

@@ -49,21 +49,21 @@ static NSString * const kDataNetworkBaseURL = @"http://192.168.2.178:8092";
 }
 
 #pragma mark - override public
-- (void)startWithProgress:(void(^)(NSProgress *progress))progress completion:(void(^)(YQNetworkingResult *result))completion{
+- (void)start{
     // 如果url为空，直接返回
     if (self.URLString.length == 0) {
-        if (completion) {
+        if (self.completion) {
             YQNetworkingResult *result = [[YQNetworkingResult alloc] init];
             NSError *error = [NSError errorWithDomain:@"请求的url为空" code:0 userInfo:nil];
             result.error = error;
-            completion(result);
+            self.completion(result);
         }
         return;
     }
     
     // 请求成功
     void(^success)(NSURLSessionDataTask * _Nonnull, id  _Nullable) = ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
-        if (completion) {
+        if (self.completion) {
             YQNetworkingResult *result = [[YQNetworkingResult alloc] init];
             result.URL = task.currentRequest.URL.absoluteString;
             if (task.currentRequest.URL.query.length == 0) {
@@ -76,7 +76,7 @@ static NSString * const kDataNetworkBaseURL = @"http://192.168.2.178:8092";
             // 根据后台返回数据配置result的数据
             // ......
             
-            completion(result);
+            self.completion(result);
         }
         
         // 断开网络连接
@@ -87,7 +87,7 @@ static NSString * const kDataNetworkBaseURL = @"http://192.168.2.178:8092";
     
     // 请求失败
     void(^failure)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull) = ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
-        if (completion) {
+        if (self.completion) {
             YQNetworkingResult *result = [[YQNetworkingResult alloc] init];
             result.URL = task.currentRequest.URL.absoluteString;
             if (task.currentRequest.URL.query.length == 0) {
@@ -99,7 +99,7 @@ static NSString * const kDataNetworkBaseURL = @"http://192.168.2.178:8092";
             result.error = error;
             result.resultCode = YQNetworkingResultCode_timeOut;
             
-            completion(result);
+            self.completion(result);
         }
         
         // 断开网络连接
@@ -122,11 +122,11 @@ static NSString * const kDataNetworkBaseURL = @"http://192.168.2.178:8092";
     
     switch (self.method) {
         case YQNetworkingMethod_get:
-            [self.sessionManager GET:self.URLString parameters:self.parameters progress:progress success:success failure:failure];
+            [self.sessionManager GET:self.URLString parameters:self.parameters progress:self.progress success:success failure:failure];
             break;
             
         case YQNetworkingMethod_post:
-            [self.sessionManager POST:self.URLString parameters:self.parameters progress:progress success:success failure:failure];
+            [self.sessionManager POST:self.URLString parameters:self.parameters progress:self.progress success:success failure:failure];
             break;
             
         case YQNetworkingMethod_put:
@@ -138,11 +138,11 @@ static NSString * const kDataNetworkBaseURL = @"http://192.168.2.178:8092";
             break;
             
         default:
-            if (completion) {
+            if (self.completion) {
                 YQNetworkingResult *result = [[YQNetworkingResult alloc] init];
                 NSError *error = [NSError errorWithDomain:[NSString stringWithFormat:@"不支持的请求方法:%ld", (long)self.method] code:0 userInfo:nil];
                 result.error = error;
-                completion(result);
+                self.completion(result);
             }
             break;
     }

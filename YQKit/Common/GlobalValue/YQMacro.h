@@ -24,6 +24,13 @@
 
 // 图片
 #define YQImage(imageName)    [UIImage imageNamed:[NSString stringWithFormat:@"%@", imageName]]
+#define YQRenderingOriginalImage(imageName) [YQImage(imageName) imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+
+// 角度转弧度
+#define YQRadian(degrees)       (((degrees) * M_PI) / 180.0)
+
+//字体
+#define YQFont(font) [UIFont systemFontOfSize:font]
 
 // 设置视图圆角
 #define YQViewBorderRadius(View, Radius, Width, Color)\

@@ -59,14 +59,14 @@ static NSString * const kUploadNetworkBaseURL = @"http://192.168.2.178:8092";
 }
 
 #pragma mark - override public
-- (void)startWithProgress:(void(^)(NSProgress *progress))progress completion:(void(^)(YQNetworkingResult *result))completion{
+- (void)start{
     // 如果url为空，直接返回
     if (self.URLString.length == 0) {
-        if (completion) {
+        if (self.completion) {
             YQNetworkingResult *result = [[YQNetworkingResult alloc] init];
             NSError *error = [NSError errorWithDomain:@"请求的url为空" code:0 userInfo:nil];
             result.error = error;
-            completion(result);
+            self.completion(result);
         }
         return;
     }
@@ -85,11 +85,11 @@ static NSString * const kUploadNetworkBaseURL = @"http://192.168.2.178:8092";
         }
     }
     if (!existData) {
-        if (completion) {
+        if (self.completion) {
             YQNetworkingResult *result = [[YQNetworkingResult alloc] init];
             NSError *error = [NSError errorWithDomain:@"上传的数据为不能为空" code:0 userInfo:nil];
             result.error = error;
-            completion(result);
+            self.completion(result);
         }
         return;
     }
@@ -138,11 +138,11 @@ static NSString * const kUploadNetworkBaseURL = @"http://192.168.2.178:8092";
         
         // 如果数据为空，直接返回
         if ([dataDic.allKeys count] == 0) {
-            if (completion) {
+            if (self.completion) {
                 YQNetworkingResult *result = [[YQNetworkingResult alloc] init];
                 NSError *error = [NSError errorWithDomain:@"获取到的数据为空，请检查数据参数" code:0 userInfo:nil];
                 result.error = error;
-                completion(result);
+                self.completion(result);
             }
             return;
         }
@@ -157,7 +157,7 @@ static NSString * const kUploadNetworkBaseURL = @"http://192.168.2.178:8092";
             dataManager.parameters = dataDic;
         }
         dataManager.networkConfig = self.networkConfig;
-        [dataManager startWithProgress:progress completion:completion];
+        [dataManager startWithProgress:self.progress completion:self.completion];
         
         return;
     }
@@ -165,7 +165,7 @@ static NSString * const kUploadNetworkBaseURL = @"http://192.168.2.178:8092";
     // 通过multipar/form-data方式上传
     // 请求成功
     void(^success)(NSURLSessionDataTask * _Nonnull, id  _Nullable) = ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
-        if (completion) {
+        if (self.completion) {
             YQNetworkingResult *result = [[YQNetworkingResult alloc] init];
             result.URL = task.currentRequest.URL.absoluteString;
             if (task.currentRequest.URL.query.length == 0) {
@@ -178,7 +178,7 @@ static NSString * const kUploadNetworkBaseURL = @"http://192.168.2.178:8092";
             // 根据后台返回数据配置result的数据
             // ......
             
-            completion(result);
+            self.completion(result);
         }
         
         // 断开网络连接
@@ -190,7 +190,7 @@ static NSString * const kUploadNetworkBaseURL = @"http://192.168.2.178:8092";
     // 请求失败
     void(^failure)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull) = ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
         
-        if (completion) {
+        if (self.completion) {
             YQNetworkingResult *result = [[YQNetworkingResult alloc] init];
             result.URL = task.currentRequest.URL.absoluteString;
             if (task.currentRequest.URL.query.length == 0) {
@@ -202,7 +202,7 @@ static NSString * const kUploadNetworkBaseURL = @"http://192.168.2.178:8092";
             result.error = error;
             result.resultCode = YQNetworkingResultCode_timeOut;
             
-            completion(result);
+            self.completion(result);
         }
         
         // 断开网络连接
@@ -239,7 +239,7 @@ static NSString * const kUploadNetworkBaseURL = @"http://192.168.2.178:8092";
                 }
             }
         }
-    } progress:progress success:success failure:failure];
+    } progress:self.progress success:success failure:failure];
 }
 
 @end
