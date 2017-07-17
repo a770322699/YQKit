@@ -29,6 +29,8 @@
 @property (nonatomic, strong) UIView *contentView;                          // 内容视图
 @property (nonatomic, readonly) BOOL isShow;                                // 是否已经显示
 @property (nonatomic, assign) BOOL dismissWhenTapBgView;                    // 点击背景区域时是否自动隐藏， 默认yes
+@property (nonatomic, assign) BOOL dismissWhenDragBgView;                   // 在背景上拖动时是否自动隐藏，默认为no
+@property (nonatomic, assign) BOOL dismissWhenSwipeBgView;                      // 在背景上滑动时是否自动隐藏，默认为no
 @property (nonatomic, assign) NSTimeInterval duration;                      // 动画时间,默认0.25
 
 

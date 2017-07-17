@@ -20,6 +20,8 @@
 
 @property (nonatomic, assign) BOOL isShow;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGes;
+@property (nonatomic, strong) UIPanGestureRecognizer *panGes;
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeGes;
 
 @end
 
@@ -49,6 +51,22 @@
     return _tapGes;
 }
 
+- (UIPanGestureRecognizer *)panGes{
+    if (!_panGes) {
+        _panGes = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
+        _panGes.delegate = self;
+    }
+    return _panGes;
+}
+
+- (UISwipeGestureRecognizer *)swipeGes{
+    if(!_swipeGes){
+        _swipeGes = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
+        _swipeGes.delegate = self;
+    }
+    return _swipeGes;
+}
+
 #pragma mark - setting
 - (void)setDelegate:(id<YQModalViewDelegate>)delegate{
     _delegateFlag.willShow = NO;
@@ -73,6 +91,7 @@
 }
 
 - (void)setDismissWhenTapBgView:(BOOL)dismissWhenTapBgView{
+    _dismissWhenTapBgView = dismissWhenTapBgView;
     if (dismissWhenTapBgView) {
         if (self.tapGes.view != self) {
             [self addGestureRecognizer:self.tapGes];
@@ -80,6 +99,32 @@
     }else{
         if (_tapGes && _tapGes.view == self) {
             [self removeGestureRecognizer:_tapGes];
+        }
+    }
+}
+
+- (void)setDismissWhenDragBgView:(BOOL)dismissWhenDragBgView{
+    _dismissWhenDragBgView = dismissWhenDragBgView;
+    if (dismissWhenDragBgView) {
+        if (self.panGes.view != self) {
+            [self addGestureRecognizer:self.panGes];
+        }
+    }else{
+        if (_panGes && _panGes.view == self) {
+            [self removeGestureRecognizer:self.panGes];
+        }
+    }
+}
+
+- (void)setDismissWhenSwipeBgView:(BOOL)dismissWhenSwipeBgView{
+    _dismissWhenSwipeBgView = dismissWhenSwipeBgView;
+    if (dismissWhenSwipeBgView) {
+        if (self.swipeGes.view != self) {
+            [self addGestureRecognizer:self.swipeGes];
+        }
+    }else{
+        if (_swipeGes && _swipeGes.view == self) {
+            [self removeGestureRecognizer:self.swipeGes];
         }
     }
 }
