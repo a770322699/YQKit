@@ -28,5 +28,6 @@
 #import "UIAlertController+YQCategory.h"
 #import "UIScrollView+YQEmptyDataSet.h"
 #import "UIView+YQAnimation.h"
+#import "UITableView+YQCardGroup.h"
 
 #endif /* YQCategoryForUIKit_h */
