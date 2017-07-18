@@ -13,6 +13,8 @@
 #import "ViewController.h"
 
 #import "YQLoadingView.h"
+#import "YQTableView.h"
+#import "TableViewCell.h"
 
 #import "YQLoadingViewResourceManager.h"
 
@@ -79,20 +81,22 @@
     [self.imageView2 yq_shakeStart];
 
     
-    unsigned int outCount = 0;
-    Ivar *ivars = class_copyIvarList([UITableView class], &outCount);
-    for (int i = 0; i < outCount; i++) {
-        Ivar ivar = ivars[i];
-        NSString *name = [[NSString alloc] initWithUTF8String:ivar_getName(ivar)];
-        NSLog(@"%@", name);
-    }
-    
-    free(ivars);
+//    unsigned int outCount = 0;
+//    Ivar *ivars = class_copyIvarList([UITableView class], &outCount);
+//    for (int i = 0; i < outCount; i++) {
+//        Ivar ivar = ivars[i];
+//        NSString *name = [[NSString alloc] initWithUTF8String:ivar_getName(ivar)];
+//        NSLog(@"%@", name);
+//    }
+//    
+//    free(ivars);
     
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.rowHeight = UITableViewAutomaticDimension;
+    tableView.estimatedRowHeight = 60;
     tableView.yq_cardGroupDataSource = self;
     tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     tableView.tableFooterView = [UIView new];
@@ -232,13 +236,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identitiy = @"sdjfal";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identitiy];
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identitiy];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identitiy];
-        cell.textLabel.text = @"测试";
+        cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identitiy];
         cell.backgroundColor = kYQColorClear;
         cell.contentView.backgroundColor = kYQColorClear;
     }
+    
+    cell.label.text = @"的官方金坷垃";
+    
     return cell;
 }
 

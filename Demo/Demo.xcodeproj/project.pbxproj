@@ -69,6 +69,8 @@
 		D8D6FE3B1E150576003BB3A3 /* NSManagedObject+YQModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6FE351E150576003BB3A3 /* NSManagedObject+YQModelStore.m */; };
 		D8D6FE3C1E150576003BB3A3 /* NSManagedObjectContext+YQModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6FE371E150576003BB3A3 /* NSManagedObjectContext+YQModelStore.m */; };
 		D8D6FE3D1E150576003BB3A3 /* YQModelStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6FE391E150576003BB3A3 /* YQModelStore.m */; };
+		D8DF33EE1F1CC41E007C2E99 /* YQTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DF33ED1F1CC41E007C2E99 /* YQTableView.m */; };
+		D8DF34BC1F1DB2B0007C2E99 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DF34BB1F1DB2B0007C2E99 /* TableViewCell.m */; };
 		D8FCAACC1F00AF6B000E194E /* NSObject+YQObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FCAACB1F00AF6B000E194E /* NSObject+YQObject.m */; };
 /* End PBXBuildFile section */
 
@@ -211,6 +213,10 @@
 		D8D6FE371E150576003BB3A3 /* NSManagedObjectContext+YQModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+YQModelStore.m"; sourceTree = "<group>"; };
 		D8D6FE381E150576003BB3A3 /* YQModelStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQModelStore.h; sourceTree = "<group>"; };
 		D8D6FE391E150576003BB3A3 /* YQModelStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQModelStore.m; sourceTree = "<group>"; };
+		D8DF33EC1F1CC41E007C2E99 /* YQTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQTableView.h; sourceTree = "<group>"; };
+		D8DF33ED1F1CC41E007C2E99 /* YQTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQTableView.m; sourceTree = "<group>"; };
+		D8DF34BA1F1DB2B0007C2E99 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		D8DF34BB1F1DB2B0007C2E99 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		D8FCAACA1F00AF6B000E194E /* NSObject+YQObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YQObject.h"; sourceTree = "<group>"; };
 		D8FCAACB1F00AF6B000E194E /* NSObject+YQObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YQObject.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -284,6 +290,10 @@
 				D806E69D1DCC761C000B8F98 /* ViewController.m */,
 				D81894751E163F3C00283E30 /* YQTestModelView.h */,
 				D81894761E163F3C00283E30 /* YQTestModelView.m */,
+				D8DF33EC1F1CC41E007C2E99 /* YQTableView.h */,
+				D8DF33ED1F1CC41E007C2E99 /* YQTableView.m */,
+				D8DF34BA1F1DB2B0007C2E99 /* TableViewCell.h */,
+				D8DF34BB1F1DB2B0007C2E99 /* TableViewCell.m */,
 				D806E69F1DCC761C000B8F98 /* Main.storyboard */,
 				D806E6A21DCC761C000B8F98 /* Assets.xcassets */,
 				D806E6A41DCC761C000B8F98 /* LaunchScreen.storyboard */,
@@ -725,6 +735,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D152281DDD83BD000F2DB0 /* UILabel+YQCategory.m in Sources */,
+				D8DF33EE1F1CC41E007C2E99 /* YQTableView.m in Sources */,
 				D8D152211DDD83BD000F2DB0 /* NSString+YQRegular.m in Sources */,
 				D892F7E91EFA1A1500E7B685 /* YQBuildingManager.m in Sources */,
 				D8D6FE3C1E150576003BB3A3 /* NSManagedObjectContext+YQModelStore.m in Sources */,
@@ -780,6 +791,7 @@
 				D8D6FE3A1E150576003BB3A3 /* YQCoderObject.m in Sources */,
 				D85A89761F14D05B006A143E /* UIView+YQAnimation.m in Sources */,
 				D81229DC1E88E70C00AD5BA3 /* YQImageTextView.m in Sources */,
+				D8DF34BC1F1DB2B0007C2E99 /* TableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

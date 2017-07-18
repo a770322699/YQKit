@@ -124,6 +124,7 @@ typedef NSMutableDictionary<NSString *, NSMutableArray<YQTableViewGroupCard *> *
 @implementation UITableView (YQCardGroup)
 
 + (void)load{
+    YQSwizzle([UITableView class], @selector(layoutSubviews), @selector(yq_layoutSubViews));
     YQSwizzle([UITableView class], @selector(reloadData), @selector(yq_groupCardReloadData));
     YQSwizzle([UITableView class], @selector(endUpdates), @selector(yq_groupCardEndUpdates));
 }
@@ -141,6 +142,14 @@ typedef NSMutableDictionary<NSString *, NSMutableArray<YQTableViewGroupCard *> *
     
     if (self.yq_cardGroupDataSource) {
         [self yq_reloadGroupCard];
+    }
+}
+
+- (void)yq_layoutSubViews{
+    [self yq_layoutSubViews];
+    
+    if (self.yq_cardGroupDataSource) {
+        [self yq_updateGroupCardFrame];
     }
 }
 
@@ -256,12 +265,19 @@ typedef NSMutableDictionary<NSString *, NSMutableArray<YQTableViewGroupCard *> *
     [self yq_wrapperView].yq_x = leftMargin;
     [self yq_wrapperView].yq_width = self.yq_width - leftMargin - rightMargin;
     
+    if (self.property.visibleSectionMax == -1 || self.property.visibleSectionMin == -1) {
+        return;
+    }
     for (NSInteger i = self.property.visibleSectionMin; i <= self.property.visibleSectionMax; i++) {
         UIView *cardView = [self.property.displayings objectForKey:@(i)].cardView;
         CGRect sectionRect = [self rectForSection:i];
         CGRect headerRect = [self rectForHeaderInSection:i];
         CGRect footerRect = [self rectForFooterInSection:i];
-        cardView.frame = CGRectMake(leftMargin, sectionRect.origin.y + headerRect.size.height, [self yq_wrapperView].yq_width, sectionRect.size.height - headerRect.size.height - footerRect.size.height);
+        cardView.frame = CGRectMake(leftMargin, sectionRect.origin.y + headerRect.size.height, self.yq_width - leftMargin - rightMargin, sectionRect.size.height - headerRect.size.height - footerRect.size.height);
+    }
+    
+    for (UITableViewCell *cell in [self visibleCells]) {
+        cell.yq_width = self.yq_width - leftMargin - rightMargin;
     }
 }
 
