@@ -51,6 +51,7 @@ static const char *kRuntimeSaveKey_yq_multiCombinationViewNextConstraint = "kRun
 @property (nonatomic, assign) YQMultiCombinationViewPattern pattern; // 组合模式
 @property (nonatomic, copy) NSArray<UIView *> *views; // 组合的视图集合
 @property (nonatomic, assign) CGFloat space; // 间距
+@property (nonatomic, strong) NSArray<MASConstraint *> *alignmentConstraints;  // 对齐方式的约束
 
 @end
 
@@ -68,6 +69,7 @@ static const char *kRuntimeSaveKey_yq_multiCombinationViewNextConstraint = "kRun
         self.views = views;
         self.space = space;
         
+        NSMutableArray *alignmentConstraints = [NSMutableArray array];
         UIView *beforView = nil;
         for (int i = 0; i < views.count; i++) {
             UIView *view = views[i];
@@ -75,7 +77,7 @@ static const char *kRuntimeSaveKey_yq_multiCombinationViewNextConstraint = "kRun
             
             if (pattern == YQMultiCombinationViewPattern_horizontal) {  // 水平排列
                 [view mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.centerY.mas_equalTo(self);
+                    [alignmentConstraints addObject:make.centerY.mas_equalTo(self)];
                     make.height.mas_lessThanOrEqualTo(self);
                     if (beforView) {
                         view.yq_multiCombinationViewBeforConstraint = make.leading.mas_equalTo(beforView.mas_trailing).offset(space);
@@ -86,7 +88,7 @@ static const char *kRuntimeSaveKey_yq_multiCombinationViewNextConstraint = "kRun
                 }];
             }else{  // 纵向排列
                 [view mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.centerX.mas_equalTo(self);
+                    [alignmentConstraints addObject:make.centerX.mas_equalTo(self)];
                     make.width.mas_lessThanOrEqualTo(self);
                     if (beforView) {
                         view.yq_multiCombinationViewBeforConstraint = make.top.mas_equalTo(beforView.mas_bottom).offset(self.space);
@@ -101,6 +103,7 @@ static const char *kRuntimeSaveKey_yq_multiCombinationViewNextConstraint = "kRun
             
             [view addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
         }
+        self.alignmentConstraints = alignmentConstraints;
         
         if (beforView) {
             if (pattern == YQMultiCombinationViewPattern_horizontal) { // 水平排列
@@ -116,6 +119,64 @@ static const char *kRuntimeSaveKey_yq_multiCombinationViewNextConstraint = "kRun
     }
     
     return self;
+}
+
+#pragma mark - setting
+- (void)setAlignment:(YQMultiCombinationViewAlignment)alignment{
+    
+    if (_alignment == alignment) {
+        return;
+    }
+    
+    [self.alignmentConstraints makeObjectsPerformSelector:@selector(uninstall)];
+    
+    NSMutableArray *alignmentConstraints = [NSMutableArray array];
+    for (UIView *view in self.views) {
+        __block MASConstraint *constraint = nil;
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            if (self.pattern == YQMultiCombinationViewPattern_Vertical) {
+                switch (alignment) {
+                    case YQMultiCombinationViewAlignment_center:
+                        constraint = make.centerX.mas_equalTo(self);
+                        break;
+                        
+                    case YQMultiCombinationViewAlignment_leading:
+                        constraint = make.leading.mas_equalTo(@0);
+                        break;
+                        
+                    case YQMultiCombinationViewAlignment_trailing:
+                        constraint = make.trailing.mas_equalTo(@0);
+                        break;
+                        
+                    default:
+                        break;
+                }
+            }else{
+                switch (alignment) {
+                    case YQMultiCombinationViewAlignment_center:
+                        constraint = make.centerY.mas_equalTo(self);
+                        break;
+                        
+                    case YQMultiCombinationViewAlignment_leading:
+                        constraint = make.top.mas_equalTo(@0);
+                        break;
+                        
+                    case YQMultiCombinationViewAlignment_trailing:
+                        constraint = make.bottom.mas_equalTo(@0);
+                        break;
+                        
+                    default:
+                        break;
+                }
+            }
+        }];
+        if (constraint) {
+            [alignmentConstraints addObject:constraint];
+        }
+    }
+    self.alignmentConstraints = alignmentConstraints;
+    
+    _alignment = alignment;
 }
 
 #pragma mark - KVO

@@ -91,6 +91,14 @@
     }
 }
 
+- (void)setAlignment:(YQCombinationViewAlignment)alignment{
+    if (_alignment != alignment) {
+        _alignment = alignment;
+        
+        [self updateCustomConstraint];
+    }
+}
+
 - (void)setSpace:(CGFloat)space{
     _space = space;
     [self.spaceConstraint setOffset:space];
@@ -178,7 +186,22 @@
                 constraints = [self.leadingView mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.leading.mas_equalTo(@0);
                     make.height.mas_lessThanOrEqualTo(self);
-                    make.centerY.mas_equalTo(self);
+                    switch (self.alignment) {
+                        case YQCombinationViewAlignment_center:
+                            make.centerY.mas_equalTo(self);
+                            break;
+                            
+                        case YQCombinationViewAlignment_leading:
+                            make.leading.mas_equalTo(@0);
+                            break;
+                            
+                        case YQCombinationViewAlignment_trailing:
+                            make.trailing.mas_equalTo(@0);
+                            break;
+                            
+                        default:
+                            break;
+                    }
                 }];
                 [self.constraints addObjectsFromArray:constraints];
                 
@@ -186,7 +209,22 @@
                     make.trailing.mas_equalTo(@0);
                     self.spaceConstraint = make.leading.mas_equalTo(self.leadingView.mas_trailing).offset(self.space);
                     make.height.mas_lessThanOrEqualTo(self);
-                    make.centerY.mas_equalTo(self);
+                    switch (self.alignment) {
+                        case YQCombinationViewAlignment_center:
+                            make.centerY.mas_equalTo(self);
+                            break;
+                            
+                        case YQCombinationViewAlignment_leading:
+                            make.leading.mas_equalTo(@0);
+                            break;
+                            
+                        case YQCombinationViewAlignment_trailing:
+                            make.trailing.mas_equalTo(@0);
+                            break;
+                            
+                        default:
+                            break;
+                    }
                 }];
                 [self.constraints addObjectsFromArray:constraints];
             }else{  // 只有一个前面的视图
@@ -200,7 +238,22 @@
             constraints = [onlyView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.leading.and.trailing.mas_equalTo(@0);
                 make.height.mas_lessThanOrEqualTo(self);
-                make.centerY.mas_equalTo(self);
+                switch (self.alignment) {
+                    case YQCombinationViewAlignment_center:
+                        make.centerY.mas_equalTo(self);
+                        break;
+                        
+                    case YQCombinationViewAlignment_leading:
+                        make.leading.mas_equalTo(@0);
+                        break;
+                        
+                    case YQCombinationViewAlignment_trailing:
+                        make.trailing.mas_equalTo(@0);
+                        break;
+                        
+                    default:
+                        break;
+                }
             }];
             [self.constraints addObjectsFromArray:constraints];
         }
@@ -210,7 +263,22 @@
                 constraints = [self.leadingView mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.top.mas_equalTo(@0);
                     make.width.mas_lessThanOrEqualTo(self);
-                    make.centerX.mas_equalTo(self);
+                    switch (self.alignment) {
+                        case YQCombinationViewAlignment_center:
+                            make.centerX.mas_equalTo(self);
+                            break;
+                            
+                        case YQCombinationViewAlignment_leading:
+                            make.top.mas_equalTo(@0);
+                            break;
+                            
+                        case YQCombinationViewAlignment_trailing:
+                            make.bottom.mas_equalTo(@0);
+                            break;
+                            
+                        default:
+                            break;
+                    }
                 }];
                 [self.constraints addObjectsFromArray:constraints];
                 
@@ -218,7 +286,22 @@
                     self.spaceConstraint = make.top.mas_equalTo(self.leadingView.mas_bottom).offset(self.space);
                     make.bottom.mas_equalTo(@0);
                     make.width.mas_lessThanOrEqualTo(self);
-                    make.centerX.mas_equalTo(self);
+                    switch (self.alignment) {
+                        case YQCombinationViewAlignment_center:
+                            make.centerX.mas_equalTo(self);
+                            break;
+                            
+                        case YQCombinationViewAlignment_leading:
+                            make.top.mas_equalTo(@0);
+                            break;
+                            
+                        case YQCombinationViewAlignment_trailing:
+                            make.bottom.mas_equalTo(@0);
+                            break;
+                            
+                        default:
+                            break;
+                    }
                 }];
                 [self.constraints addObjectsFromArray:constraints];
             }else{  // 只有一个前面的视图
@@ -232,7 +315,22 @@
             constraints = [onlyView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.and.bottom.mas_equalTo(@0);
                 make.width.mas_lessThanOrEqualTo(self);
-                make.centerX.mas_equalTo(self);
+                switch (self.alignment) {
+                    case YQCombinationViewAlignment_center:
+                        make.centerX.mas_equalTo(self);
+                        break;
+                        
+                    case YQCombinationViewAlignment_leading:
+                        make.top.mas_equalTo(@0);
+                        break;
+                        
+                    case YQCombinationViewAlignment_trailing:
+                        make.bottom.mas_equalTo(@0);
+                        break;
+                        
+                    default:
+                        break;
+                }
             }];
             [self.constraints addObjectsFromArray:constraints];
         }
