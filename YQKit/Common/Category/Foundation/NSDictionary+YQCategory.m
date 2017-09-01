@@ -97,11 +97,11 @@
 }
 
 - (BOOL)yq_hasKey:(NSString *)key {
-    return [self objectForKey:key] != nil;
+    return [self valueForKey:key] != nil;
 }
 
 - (NSString*)yq_stringForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     if (value == nil || value == [NSNull null]){
         return nil;
     }
@@ -116,7 +116,7 @@
 }
 
 - (NSNumber*)yq_numberForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     if ([value isKindOfClass:[NSNumber class]]) {
         return (NSNumber*)value;
     }
@@ -129,7 +129,7 @@
 }
 
 - (NSDecimalNumber *)yq_decimalNumberForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     
     if ([value isKindOfClass:[NSDecimalNumber class]]) {
         return value;
@@ -145,7 +145,7 @@
 
 
 - (NSArray*)yq_arrayForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     if (value == nil || value == [NSNull null]) {
         return nil;
     }
@@ -156,7 +156,7 @@
 }
 
 - (NSDictionary*)yq_dictionaryForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     if (value == nil || value == [NSNull null]) {
         return nil;
     }
@@ -167,7 +167,7 @@
 }
 
 - (NSInteger)yq_integerForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     if (value == nil || value == [NSNull null]) {
         return 0;
     }
@@ -177,7 +177,7 @@
     return 0;
 }
 - (NSUInteger)yq_unsignedIntegerForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     if (value == nil || value == [NSNull null]) {
         return 0;
     }
@@ -187,7 +187,7 @@
     return 0;
 }
 - (BOOL)yq_boolForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     
     if (value == nil || value == [NSNull null]) {
         return NO;
@@ -201,7 +201,7 @@
     return NO;
 }
 - (int16_t)yq_int16ForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     
     if (value == nil || value == [NSNull null]) {
         return 0;
@@ -215,7 +215,7 @@
     return 0;
 }
 - (int32_t)yq_int32ForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     
     if (value == nil || value == [NSNull null]) {
         return 0;
@@ -226,7 +226,7 @@
     return 0;
 }
 - (int64_t)yq_int64ForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     
     if (value == nil || value == [NSNull null]) {
         return 0;
@@ -238,7 +238,7 @@
 }
 
 - (char)yq_charForKey:(id)key{
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     
     if (value == nil || value == [NSNull null]) {
         return 0;
@@ -249,7 +249,7 @@
     return 0;
 }
 - (short)yq_shortForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     
     if (value == nil || value == [NSNull null])
     {
@@ -265,7 +265,7 @@
 }
 
 - (float)yq_floatForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     
     if (value == nil || value == [NSNull null]) {
         return 0;
@@ -277,7 +277,7 @@
 }
 
 - (double)yq_doubleForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     
     if (value == nil || value == [NSNull null]) {
         return 0;
@@ -289,7 +289,7 @@
 }
 
 - (long long)yq_longLongForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     if ([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSNumber class]]) {
         return [value longLongValue];
     }
@@ -297,7 +297,7 @@
 }
 
 - (unsigned long long)yq_unsignedLongLongForKey:(id)key {
-    id value = [self objectForKey:key];
+    id value = [self valueForKey:key];
     if ([value isKindOfClass:[NSString class]]) {
         NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
         value = [nf numberFromString:value];
