@@ -7,20 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D81C2B5F1F79FD8300C4BEEC /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C2B5E1F79FD8300C4BEEC /* ViewExtension.swift */; };
+		61866A0820A025A20015CFDF /* YQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618669FB20A025A10015CFDF /* YQ.swift */; };
+		61866A0920A025A20015CFDF /* YQCircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618669FC20A025A10015CFDF /* YQCircleImage.swift */; };
+		61866A0A20A025A20015CFDF /* YQDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618669FD20A025A10015CFDF /* YQDictionary.swift */; };
+		61866A0B20A025A20015CFDF /* YQEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618669FE20A025A10015CFDF /* YQEdgeInsets.swift */; };
+		61866A0C20A025A20015CFDF /* YQImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618669FF20A025A10015CFDF /* YQImage.swift */; };
+		61866A0D20A025A20015CFDF /* YQInsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61866A0020A025A10015CFDF /* YQInsetLabel.swift */; };
+		61866A0E20A025A20015CFDF /* YQObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61866A0120A025A10015CFDF /* YQObject.swift */; };
+		61866A0F20A025A20015CFDF /* YQRoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61866A0220A025A10015CFDF /* YQRoundImageView.swift */; };
+		61866A1020A025A20015CFDF /* YQSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61866A0320A025A10015CFDF /* YQSize.swift */; };
+		61866A1120A025A20015CFDF /* YQTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61866A0420A025A10015CFDF /* YQTableView.swift */; };
+		61866A1220A025A20015CFDF /* YQUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61866A0520A025A10015CFDF /* YQUserInterface.swift */; };
+		61866A1320A025A20015CFDF /* YQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61866A0620A025A10015CFDF /* YQView.swift */; };
+		61866A1420A025A20015CFDF /* YQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61866A0720A025A10015CFDF /* YQViewController.swift */; };
 		D83A91F71F78937600576840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A91F61F78937600576840 /* AppDelegate.swift */; };
 		D83A91F91F78937600576840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A91F81F78937600576840 /* ViewController.swift */; };
 		D83A91FC1F78937600576840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83A91FA1F78937600576840 /* Main.storyboard */; };
 		D83A91FE1F78937600576840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D83A91FD1F78937600576840 /* Assets.xcassets */; };
 		D83A92011F78937600576840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83A91FF1F78937600576840 /* LaunchScreen.storyboard */; };
-		D83A920C1F78942600576840 /* YQConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A920B1F78942600576840 /* YQConst.swift */; };
-		D83A92131F78DF9C00576840 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A92121F78DF9C00576840 /* ButtonExtension.swift */; };
-		D87133831F7A368E00A263ED /* CollectionViewLayoutAttributesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87133821F7A368E00A263ED /* CollectionViewLayoutAttributesExtension.swift */; };
-		D87133851F7A36D200A263ED /* CGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87133841F7A36D200A263ED /* CGExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D81C2B5E1F79FD8300C4BEEC /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		618669FB20A025A10015CFDF /* YQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQ.swift; sourceTree = "<group>"; };
+		618669FC20A025A10015CFDF /* YQCircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQCircleImage.swift; sourceTree = "<group>"; };
+		618669FD20A025A10015CFDF /* YQDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQDictionary.swift; sourceTree = "<group>"; };
+		618669FE20A025A10015CFDF /* YQEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQEdgeInsets.swift; sourceTree = "<group>"; };
+		618669FF20A025A10015CFDF /* YQImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQImage.swift; sourceTree = "<group>"; };
+		61866A0020A025A10015CFDF /* YQInsetLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQInsetLabel.swift; sourceTree = "<group>"; };
+		61866A0120A025A10015CFDF /* YQObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQObject.swift; sourceTree = "<group>"; };
+		61866A0220A025A10015CFDF /* YQRoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQRoundImageView.swift; sourceTree = "<group>"; };
+		61866A0320A025A10015CFDF /* YQSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQSize.swift; sourceTree = "<group>"; };
+		61866A0420A025A10015CFDF /* YQTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQTableView.swift; sourceTree = "<group>"; };
+		61866A0520A025A10015CFDF /* YQUserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQUserInterface.swift; sourceTree = "<group>"; };
+		61866A0620A025A10015CFDF /* YQView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQView.swift; sourceTree = "<group>"; };
+		61866A0720A025A10015CFDF /* YQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQViewController.swift; sourceTree = "<group>"; };
 		D83A91F31F78937600576840 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83A91F61F78937600576840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D83A91F81F78937600576840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,10 +48,6 @@
 		D83A91FD1F78937600576840 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D83A92001F78937600576840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D83A92021F78937600576840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D83A920B1F78942600576840 /* YQConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = YQConst.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		D83A92121F78DF9C00576840 /* ButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
-		D87133821F7A368E00A263ED /* CollectionViewLayoutAttributesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayoutAttributesExtension.swift; sourceTree = "<group>"; };
-		D87133841F7A36D200A263ED /* CGExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,10 +61,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		618669FA20A025A10015CFDF /* YQKit */ = {
+			isa = PBXGroup;
+			children = (
+				618669FB20A025A10015CFDF /* YQ.swift */,
+				618669FC20A025A10015CFDF /* YQCircleImage.swift */,
+				618669FD20A025A10015CFDF /* YQDictionary.swift */,
+				618669FE20A025A10015CFDF /* YQEdgeInsets.swift */,
+				618669FF20A025A10015CFDF /* YQImage.swift */,
+				61866A0020A025A10015CFDF /* YQInsetLabel.swift */,
+				61866A0120A025A10015CFDF /* YQObject.swift */,
+				61866A0220A025A10015CFDF /* YQRoundImageView.swift */,
+				61866A0320A025A10015CFDF /* YQSize.swift */,
+				61866A0420A025A10015CFDF /* YQTableView.swift */,
+				61866A0520A025A10015CFDF /* YQUserInterface.swift */,
+				61866A0620A025A10015CFDF /* YQView.swift */,
+				61866A0720A025A10015CFDF /* YQViewController.swift */,
+			);
+			name = YQKit;
+			path = ../YQKit;
+			sourceTree = "<group>";
+		};
 		D83A91EA1F78937600576840 = {
 			isa = PBXGroup;
 			children = (
-				D83A92081F7893AE00576840 /* YQKit */,
+				618669FA20A025A10015CFDF /* YQKit */,
 				D83A91F51F78937600576840 /* Demo */,
 				D83A91F41F78937600576840 /* Products */,
 			);
@@ -73,59 +110,6 @@
 				D83A92021F78937600576840 /* Info.plist */,
 			);
 			path = Demo;
-			sourceTree = "<group>";
-		};
-		D83A92081F7893AE00576840 /* YQKit */ = {
-			isa = PBXGroup;
-			children = (
-				D83A92091F78940700576840 /* Common */,
-			);
-			name = YQKit;
-			path = ../YQKit;
-			sourceTree = "<group>";
-		};
-		D83A92091F78940700576840 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				D83A920D1F78D6FC00576840 /* Extension */,
-				D83A920A1F78940700576840 /* GlobalValue */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		D83A920A1F78940700576840 /* GlobalValue */ = {
-			isa = PBXGroup;
-			children = (
-				D83A920B1F78942600576840 /* YQConst.swift */,
-			);
-			path = GlobalValue;
-			sourceTree = "<group>";
-		};
-		D83A920D1F78D6FC00576840 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				D83A920E1F78D6FC00576840 /* Foundation */,
-				D83A920F1F78D6FC00576840 /* UIKit */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		D83A920E1F78D6FC00576840 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		D83A920F1F78D6FC00576840 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				D83A92121F78DF9C00576840 /* ButtonExtension.swift */,
-				D81C2B5E1F79FD8300C4BEEC /* ViewExtension.swift */,
-				D87133821F7A368E00A263ED /* CollectionViewLayoutAttributesExtension.swift */,
-				D87133841F7A36D200A263ED /* CGExtension.swift */,
-			);
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,13 +184,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D87133851F7A36D200A263ED /* CGExtension.swift in Sources */,
+				61866A0B20A025A20015CFDF /* YQEdgeInsets.swift in Sources */,
+				61866A1020A025A20015CFDF /* YQSize.swift in Sources */,
 				D83A91F91F78937600576840 /* ViewController.swift in Sources */,
-				D83A92131F78DF9C00576840 /* ButtonExtension.swift in Sources */,
-				D83A920C1F78942600576840 /* YQConst.swift in Sources */,
+				61866A0D20A025A20015CFDF /* YQInsetLabel.swift in Sources */,
+				61866A1320A025A20015CFDF /* YQView.swift in Sources */,
+				61866A0A20A025A20015CFDF /* YQDictionary.swift in Sources */,
+				61866A1220A025A20015CFDF /* YQUserInterface.swift in Sources */,
+				61866A1120A025A20015CFDF /* YQTableView.swift in Sources */,
+				61866A0C20A025A20015CFDF /* YQImage.swift in Sources */,
+				61866A0F20A025A20015CFDF /* YQRoundImageView.swift in Sources */,
+				61866A0920A025A20015CFDF /* YQCircleImage.swift in Sources */,
 				D83A91F71F78937600576840 /* AppDelegate.swift in Sources */,
-				D81C2B5F1F79FD8300C4BEEC /* ViewExtension.swift in Sources */,
-				D87133831F7A368E00A263ED /* CollectionViewLayoutAttributesExtension.swift in Sources */,
+				61866A1420A025A20015CFDF /* YQViewController.swift in Sources */,
+				61866A0820A025A20015CFDF /* YQ.swift in Sources */,
+				61866A0E20A025A20015CFDF /* YQObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +327,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yiquan.com.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -347,7 +339,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yiquan.com.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

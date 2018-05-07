@@ -184,19 +184,19 @@
         if (isVisible(self.leadingView)) {
             if (isVisible(self.trailingView)) {    // 两个视图都存在
                 constraints = [self.leadingView mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.leading.mas_equalTo(@0);
                     make.height.mas_lessThanOrEqualTo(self);
+                    make.leading.mas_equalTo(@0);
                     switch (self.alignment) {
                         case YQCombinationViewAlignment_center:
                             make.centerY.mas_equalTo(self);
                             break;
                             
                         case YQCombinationViewAlignment_leading:
-                            make.leading.mas_equalTo(@0);
+                            make.top.mas_equalTo(@0);
                             break;
                             
                         case YQCombinationViewAlignment_trailing:
-                            make.trailing.mas_equalTo(@0);
+                            make.bottom.mas_equalTo(@0);
                             break;
                             
                         default:
@@ -215,11 +215,11 @@
                             break;
                             
                         case YQCombinationViewAlignment_leading:
-                            make.leading.mas_equalTo(@0);
+                            make.top.mas_equalTo(@0);
                             break;
                             
                         case YQCombinationViewAlignment_trailing:
-                            make.trailing.mas_equalTo(@0);
+                            make.bottom.mas_equalTo(@0);
                             break;
                             
                         default:
@@ -244,11 +244,11 @@
                         break;
                         
                     case YQCombinationViewAlignment_leading:
-                        make.leading.mas_equalTo(@0);
+                        make.top.mas_equalTo(@0);
                         break;
                         
                     case YQCombinationViewAlignment_trailing:
-                        make.trailing.mas_equalTo(@0);
+                        make.bottom.mas_equalTo(@0);
                         break;
                         
                     default:
@@ -269,11 +269,11 @@
                             break;
                             
                         case YQCombinationViewAlignment_leading:
-                            make.top.mas_equalTo(@0);
+                            make.leading.mas_equalTo(@0);
                             break;
                             
                         case YQCombinationViewAlignment_trailing:
-                            make.bottom.mas_equalTo(@0);
+                            make.trailing.mas_equalTo(@0);
                             break;
                             
                         default:
@@ -292,11 +292,11 @@
                             break;
                             
                         case YQCombinationViewAlignment_leading:
-                            make.top.mas_equalTo(@0);
+                            make.leading.mas_equalTo(@0);
                             break;
                             
                         case YQCombinationViewAlignment_trailing:
-                            make.bottom.mas_equalTo(@0);
+                            make.trailing.mas_equalTo(@0);
                             break;
                             
                         default:
@@ -321,11 +321,11 @@
                         break;
                         
                     case YQCombinationViewAlignment_leading:
-                        make.top.mas_equalTo(@0);
+                        make.leading.mas_equalTo(@0);
                         break;
                         
                     case YQCombinationViewAlignment_trailing:
-                        make.bottom.mas_equalTo(@0);
+                        make.trailing.mas_equalTo(@0);
                         break;
                         
                     default:

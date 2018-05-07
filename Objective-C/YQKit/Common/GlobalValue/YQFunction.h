@@ -30,3 +30,7 @@ BOOL YQRectIsContainOtherRect(CGRect aRect, CGRect otherRect, BOOL boundary);
  @return 定时器
  */
 dispatch_source_t YQTimerStart(NSTimeInterval time, NSTimeInterval timeSpace, void(^handle)(NSInteger number, NSTimeInterval remainTime), void(^completion)());
+
+// 对文件进行MD5
+CFStringRef YQFileMD5HashCreateWithPath(CFStringRef filePath,
+                                        size_t chunkSizeForReadingData);

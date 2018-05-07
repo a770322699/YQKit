@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,33 +21,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIL-fC-A9A">
-                                <rect key="frame" x="121" y="480" width="133" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.58396470410000001" green="1" blue="0.30196075239999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIL-fC-A9A">
+                                <rect key="frame" x="142.5" y="315.5" width="90" height="36"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <state key="normal" title="Button" image="love.png"/>
                                 <connections>
                                     <action selector="timeCtrl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aga-3H-9my"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0p4-V9-QDU">
-                                <rect key="frame" x="67" y="28" width="240" height="128"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xhx-Nl-gJ3">
-                                <rect key="frame" x="67" y="225" width="240" height="128"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0p4-V9-QDU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="7a4-XI-jgv"/>
-                            <constraint firstItem="0p4-V9-QDU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RIP-HO-Eu1"/>
-                            <constraint firstItem="xhx-Nl-gJ3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="euW-8P-RVl"/>
-                            <constraint firstItem="xhx-Nl-gJ3" firstAttribute="top" secondItem="0p4-V9-QDU" secondAttribute="bottom" constant="40" id="jXF-hw-gdk"/>
+                            <constraint firstItem="vIL-fC-A9A" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KXX-Hs-Myp"/>
+                            <constraint firstItem="vIL-fC-A9A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zNJ-vJ-AU0"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView1" destination="0p4-V9-QDU" id="dKh-2M-Fir"/>
-                        <outlet property="imageView2" destination="xhx-Nl-gJ3" id="VpU-hy-egQ"/>
+                        <outlet property="loveButton" destination="8bC-Xf-vdC" id="1Ck-Cr-Qgl"/>
                         <outlet property="timeButton" destination="vIL-fC-A9A" id="lf5-3c-50p"/>
                     </connections>
                 </viewController>
@@ -56,4 +46,7 @@
             <point key="canvasLocation" x="116" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="love.png" width="36" height="36"/>
+    </resources>
 </document>

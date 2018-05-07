@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4AFD500E1EA22AAD0025B5FE /* YQValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD500D1EA22AAD0025B5FE /* YQValue.m */; };
+		614C019B1FD56FBE00E3BF64 /* love@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 614C019A1FD56FBE00E3BF64 /* love@2x.png */; };
+		61F8FCCA1FD0F8DC00282974 /* YQButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F8FCC91FD0F8DC00282974 /* YQButton.m */; };
+		61F8FCCC1FD1000500282974 /* rs_publish_imgText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61F8FCCB1FD1000500282974 /* rs_publish_imgText@2x.png */; };
 		D4B1F93DA308FCAD70B499A8 /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C45CB438FB36BEB029E1C5D /* libPods-Demo.a */; };
 		D806E6981DCC761C000B8F98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D806E6971DCC761C000B8F98 /* main.m */; };
 		D806E69B1DCC761C000B8F98 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D806E69A1DCC761C000B8F98 /* AppDelegate.m */; };
@@ -80,6 +83,10 @@
 		4AFD500C1EA22AAD0025B5FE /* YQValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQValue.h; sourceTree = "<group>"; };
 		4AFD500D1EA22AAD0025B5FE /* YQValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQValue.m; sourceTree = "<group>"; };
 		4AFD50101EA22D4B0025B5FE /* YQClassForFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YQClassForFoundation.h; sourceTree = "<group>"; };
+		614C019A1FD56FBE00E3BF64 /* love@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "love@2x.png"; sourceTree = "<group>"; };
+		61F8FCC81FD0F8DC00282974 /* YQButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YQButton.h; sourceTree = "<group>"; };
+		61F8FCC91FD0F8DC00282974 /* YQButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YQButton.m; sourceTree = "<group>"; };
+		61F8FCCB1FD1000500282974 /* rs_publish_imgText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rs_publish_imgText@2x.png"; sourceTree = "<group>"; };
 		6C45CB438FB36BEB029E1C5D /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C70B2C89E8F46D3BB26FFD8 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		96080BA75A457CDFC7577CCD /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -262,6 +269,15 @@
 			path = YQValue;
 			sourceTree = "<group>";
 		};
+		61F8FCC71FD0F8D000282974 /* YQButton */ = {
+			isa = PBXGroup;
+			children = (
+				61F8FCC81FD0F8DC00282974 /* YQButton.h */,
+				61F8FCC91FD0F8DC00282974 /* YQButton.m */,
+			);
+			path = YQButton;
+			sourceTree = "<group>";
+		};
 		D806E68A1DCC761C000B8F98 = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +300,8 @@
 		D806E6951DCC761C000B8F98 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				614C019A1FD56FBE00E3BF64 /* love@2x.png */,
+				61F8FCCB1FD1000500282974 /* rs_publish_imgText@2x.png */,
 				D865AB741E02BF0100101AA5 /* bg@2x.png */,
 				D8CD0CCB1DF161FD00641E05 /* image1.jpg */,
 				D85A896E1F14AB16006A143E /* image.jpg */,
@@ -546,6 +564,7 @@
 			isa = PBXGroup;
 			children = (
 				D8D1520F1DDD83BD000F2DB0 /* YQClassForUIKit.h */,
+				61F8FCC71FD0F8D000282974 /* YQButton */,
 				D807CB911EBB4C0400626FE0 /* YQNotificationView */,
 				D81229D61E88C0CB00AD5BA3 /* YQCombinationView */,
 				D81229CF1E88BB5700AD5BA3 /* YQMarginView */,
@@ -676,6 +695,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D806E6A61DCC761C000B8F98 /* LaunchScreen.storyboard in Resources */,
+				614C019B1FD56FBE00E3BF64 /* love@2x.png in Resources */,
+				61F8FCCC1FD1000500282974 /* rs_publish_imgText@2x.png in Resources */,
 				D8CD0CCC1DF161FD00641E05 /* image1.jpg in Resources */,
 				D806E6A31DCC761C000B8F98 /* Assets.xcassets in Resources */,
 				D806E6A11DCC761C000B8F98 /* Main.storyboard in Resources */,
@@ -770,6 +791,7 @@
 				D8C9657B1ED7D48A0028B11B /* YQMultiCombinationView.m in Sources */,
 				D806E69B1DCC761C000B8F98 /* AppDelegate.m in Sources */,
 				D8D1521F1DDD83BD000F2DB0 /* NSObject+YQCoder.m in Sources */,
+				61F8FCCA1FD0F8DC00282974 /* YQButton.m in Sources */,
 				4AFD500E1EA22AAD0025B5FE /* YQValue.m in Sources */,
 				D8CD0CCA1DF118F200641E05 /* AFHTTPSessionManager+Download.m in Sources */,
 				D8FCAACC1F00AF6B000E194E /* NSObject+YQObject.m in Sources */,

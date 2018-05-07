@@ -9,6 +9,7 @@
 #import "YQCategory.h"
 #import "YQGlobalValue.h"
 #import "Masonry.h"
+#import "YQButton.h"
 
 #import "ViewController.h"
 
@@ -27,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *timeButton;
 @property (nonatomic, strong) dispatch_source_t timer;
 @property (nonatomic, strong) YQLoadingView *loadingView;
+@property (strong, nonatomic) IBOutlet UIView *loveButton;
 
 @property (nonatomic, strong) YQTestModelView *modelView;
 
@@ -73,12 +75,12 @@
 //    tableView.yq_scaleHeaderViewVisibleHeight = 200;
 //    [self.view addSubview:tableView];
     
-    self.modelView = [[YQTestModelView alloc] init];
-    
-    self.imageView1.image = [YQImage(@"image.jpg") yq_circleImageWithSize:CGSizeMake(200, 200)];
-    self.imageView2.image = [YQImage(@"image.jpg") yq_circleImageWithRadius:50 size:CGSizeMake(200, 200)];
-    
-    [self.imageView2 yq_shakeStart];
+//    self.modelView = [[YQTestModelView alloc] init];
+//
+//    self.imageView1.image = [YQImage(@"image.jpg") yq_circleImageWithSize:CGSizeMake(200, 200)];
+//    self.imageView2.image = [YQImage(@"image.jpg") yq_circleImageWithRadius:50 size:CGSizeMake(200, 200)];
+//
+//    [self.imageView2 yq_shakeStart];
 
     
 //    unsigned int outCount = 0;
@@ -92,18 +94,67 @@
 //    free(ivars);
     
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    tableView.rowHeight = UITableViewAutomaticDimension;
-    tableView.estimatedRowHeight = 60;
-    tableView.yq_cardGroupDataSource = self;
-    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    tableView.tableFooterView = [UIView new];
-    [tableView yq_registerClass:[UIView class] forGroupCardViewReuseIdentifier:@"id"];
-    [self.view addSubview:tableView];
+//    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+//    tableView.delegate = self;
+//    tableView.dataSource = self;
+//    tableView.rowHeight = UITableViewAutomaticDimension;
+//    tableView.estimatedRowHeight = 60;
+//    tableView.yq_cardGroupDataSource = self;
+//    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    tableView.tableFooterView = [UIView new];
+//    [tableView yq_registerClass:[UIView class] forGroupCardViewReuseIdentifier:@"id"];
+//    [self.view addSubview:tableView];
+    
+    
+//
+//    YQButton *button1 = [self createButton];
+//    button1.contentStyle = YQButtonStyle_leftRight;
+//    [self.view addSubview:button1];
+//    [button1 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.mas_equalTo(self.view);
+//        make.top.mas_equalTo(@40);
+//    }];
+//
+//    YQButton *button2 = [self createButton];
+//    button2.contentStyle = YQButtonStyle_rightLeft;
+//    [self.view addSubview:button2];
+//    [button2 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.mas_equalTo(self.view);
+//        make.top.mas_equalTo(button1.mas_bottom).offset(20);
+//    }];
+    
+    YQButton *button3 = [self createButton];
+    button3.contentStyle = YQButtonStyle_upDown;
+    [self.view addSubview:button3];
+    [button3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.view).offset(80);
+    }];
+    
+//    YQButton *button4 = [self createButton];
+//    button4.contentStyle = YQButtonStyle_downUp;
+//    [self.view addSubview:button4];
+//    [button4 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.mas_equalTo(self.view);
+//        make.top.mas_equalTo(button3.mas_bottom).offset(20);
+//    }];
 }
 
+
+- (YQButton *)createButton{
+    YQButton *button = [YQButton buttonWithType:UIButtonTypeSystem];
+    [button setTitle:@"爱心" forState:UIControlStateNormal];
+    [button setTitleColor:kYQColorBlack forState:UIControlStateNormal];
+    [button setImage:YQRenderingOriginalImage(@"love") forState:UIControlStateNormal];
+    YQViewBorderRadius(button, 0, 1, kYQColorGreen);
+    YQViewBorderRadius(button.titleLabel, 0, 1, kYQColorBlue);
+    YQViewBorderRadius(button.imageView, 0, 1, kYQColorOrange);
+    button.contentSpace = 10;
+    button.contentInsets = UIEdgeInsetsMake(10, 10, 10,10);
+    button.clipsToBounds = NO;
+    
+    return button;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -14,6 +14,7 @@
 
 #import "YQMarginView.h"
 #import "YQMarginLabel.h"
+#import "YQButton.h"
 
 #import "YQCombinationView.h"
 #import "YQImageTextView.h"
