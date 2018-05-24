@@ -20,6 +20,7 @@
 		61866A1220A025A20015CFDF /* YQUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61866A0520A025A10015CFDF /* YQUserInterface.swift */; };
 		61866A1320A025A20015CFDF /* YQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61866A0620A025A10015CFDF /* YQView.swift */; };
 		61866A1420A025A20015CFDF /* YQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61866A0720A025A10015CFDF /* YQViewController.swift */; };
+		61FC396C20B3B63100292DC8 /* YQTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC396B20B3B63100292DC8 /* YQTree.swift */; };
 		D83A91F71F78937600576840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A91F61F78937600576840 /* AppDelegate.swift */; };
 		D83A91F91F78937600576840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A91F81F78937600576840 /* ViewController.swift */; };
 		D83A91FC1F78937600576840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83A91FA1F78937600576840 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		61866A0520A025A10015CFDF /* YQUserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQUserInterface.swift; sourceTree = "<group>"; };
 		61866A0620A025A10015CFDF /* YQView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQView.swift; sourceTree = "<group>"; };
 		61866A0720A025A10015CFDF /* YQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQViewController.swift; sourceTree = "<group>"; };
+		61FC396B20B3B63100292DC8 /* YQTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YQTree.swift; sourceTree = "<group>"; };
 		D83A91F31F78937600576840 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83A91F61F78937600576840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D83A91F81F78937600576840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				61866A0520A025A10015CFDF /* YQUserInterface.swift */,
 				61866A0620A025A10015CFDF /* YQView.swift */,
 				61866A0720A025A10015CFDF /* YQViewController.swift */,
+				61FC396B20B3B63100292DC8 /* YQTree.swift */,
 			);
 			name = YQKit;
 			path = ../YQKit;
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61FC396C20B3B63100292DC8 /* YQTree.swift in Sources */,
 				61866A0B20A025A20015CFDF /* YQEdgeInsets.swift in Sources */,
 				61866A1020A025A20015CFDF /* YQSize.swift in Sources */,
 				D83A91F91F78937600576840 /* ViewController.swift in Sources */,
